@@ -468,6 +468,196 @@
       line-height: 1.7;
     }
 
+    /* === Featured Project Showcase === */
+    .showcase-banner {
+      width: 100%;
+      height: 340px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #0D2B4E 0%, #0A1A2E 40%, #0A0B0F 100%);
+      border: 1px solid var(--stroke);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 56px;
+      gap: 16px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .showcase-banner::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .showcase-tag {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent-light);
+      letter-spacing: 3px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .showcase-name {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+      position: relative;
+      z-index: 1;
+    }
+
+    .showcase-subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 720px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .showcase-partner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 4px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .showcase-partner-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-tertiary);
+    }
+
+    .showcase-partner-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent-light);
+    }
+
+    .showcase-overview {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.9;
+      white-space: pre-line;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+      width: 100%;
+    }
+
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 6px;
+      border-radius: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-line);
+      transition: border-color 0.2s ease;
+    }
+
+    .spec-item:hover {
+      border-color: var(--stroke);
+    }
+
+    .spec-label {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-tertiary);
+    }
+
+    .spec-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .spec-unit {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-secondary);
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      width: 100%;
+    }
+
+    .highlight-card {
+      display: flex;
+      flex-direction: column;
+      padding: 28px 24px;
+      gap: 16px;
+      border-radius: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-line);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .highlight-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .highlight-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(59, 130, 246, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-light);
+    }
+
+    .highlight-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .highlight-desc {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .showcase-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent-light);
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+
+    .showcase-link:hover {
+      gap: 12px;
+    }
+
     /* === Contact Section === */
     .contact-content {
       display: flex;
@@ -553,6 +743,7 @@
         <a href="#about">关于我</a>
         <a href="#experience">履历</a>
         <a href="#projects">项目</a>
+        <a href="#showcase">案例</a>
         <a href="#contact">联系</a>
       </div>
     </nav>
@@ -696,6 +887,118 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- Featured Project: Oceanwalker S60e -->
+    <section class="section" id="showcase">
+      <div class="section-header">
+        <div class="accent-bar"></div>
+        <h2 class="section-title">案例展示</h2>
+        <div class="header-spacer"></div>
+        <span class="section-label">CASE STUDY</span>
+      </div>
+
+      <!-- Banner -->
+      <div class="showcase-banner">
+        <div class="showcase-tag">SOLAR ELECTRIC CATAMARAN</div>
+        <div class="showcase-name">Oceanwalker S60e</div>
+        <div class="showcase-subtitle">太阳能电动双体游艇 — 专为静谧巡航和高效能源利用而设计</div>
+        <div class="showcase-partner">
+          <span class="showcase-partner-label">合作方：</span>
+          <span class="showcase-partner-name">Revolution Marine X 逸动科技</span>
+        </div>
+      </div>
+
+      <!-- Overview -->
+      <p class="showcase-overview">Oceanwalker S60e 是一艘太阳能电动双体游艇，由逸动科技与 Revolution Marine Group 合作打造，旨在成为可持续游艇标杆。首艘 S60e 于 2026 年 4 月交付至 Club Ki'ama Bahamas（全球首个提供太阳能海滨住宅与碳中和游艇船队的私人岛屿俱乐部），目标用户为追求碳中和生活方式的高端船东。
+
+该游艇采用轻质复合材料制造，配备两台 150kW 推进电机，最高航速 12 节，经济航速 7-8 节；搭载逸动自研船用磷酸铁锂电池及智能电池管理系统（BMS），集成 10kW 太阳能阵列，可在锚泊时利用太阳能补充电力；配备两台 45kW 柴油发电机组作为增程器，巡航航程可达 800 海里。</p>
+
+      <!-- Specs Grid -->
+      <div class="specs-grid">
+        <div class="spec-item">
+          <div class="spec-label">船长</div>
+          <div class="spec-value">18.29 <span class="spec-unit">米</span></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">型宽</div>
+          <div class="spec-value">8.38 <span class="spec-unit">米</span></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">吃水</div>
+          <div class="spec-value">8.84 <span class="spec-unit">米</span></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">排水量</div>
+          <div class="spec-value">42 <span class="spec-unit">吨</span></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">巡航航速</div>
+          <div class="spec-value">8 <span class="spec-unit">节</span></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">最大航速</div>
+          <div class="spec-value">12 <span class="spec-unit">节</span></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">推进电机</div>
+          <div class="spec-value">150 <span class="spec-unit">kW × 2</span></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">艏侧推器</div>
+          <div class="spec-value">15 <span class="spec-unit">kW × 2</span></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">电池容量</div>
+          <div class="spec-value">141 <span class="spec-unit">kWh × 2</span></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">增程器功率</div>
+          <div class="spec-value">55 <span class="spec-unit">kW × 2</span></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">太阳能阵列</div>
+          <div class="spec-value">10 <span class="spec-unit">kW</span></div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">CE 认证</div>
+          <div class="spec-value">B <span class="spec-unit">级</span></div>
+        </div>
+      </div>
+
+      <!-- Highlights -->
+      <div class="highlights-grid">
+        <div class="highlight-card">
+          <div class="highlight-number">01</div>
+          <div class="highlight-title">环保性能</div>
+          <div class="highlight-desc">全电力推进消除常规化石燃料消耗，太阳能阵列延长无排放运行时间，完美契合碳中和生活方式。</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-number">02</div>
+          <div class="highlight-title">智能能源管理</div>
+          <div class="highlight-desc">自研 BMS 实时监测电池状态优化充放电，EMS 精密能量管理系统实现电力精准分配与全船电气监控。</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-number">03</div>
+          <div class="highlight-title">长航程保障</div>
+          <div class="highlight-desc">柴油增程器结合智能能源管理，突破纯电续航限制，巡航航程可达 800 海里，支持偏远目的地探索。</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-number">04</div>
+          <div class="highlight-title">静音航行体验</div>
+          <div class="highlight-desc">电机驱动近乎静音，大幅提升巡航舒适性；轻质材料与高效动力设计平衡性能与能耗。</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-number">05</div>
+          <div class="highlight-title">可靠易维护</div>
+          <div class="highlight-desc">电力系统减少机械损耗，降低维护需求，提升船艇整体可靠性与运营效率。</div>
+        </div>
+      </div>
+
+      <!-- Source Link -->
+      <a class="showcase-link" href="https://www.epropulsion.cn/solution/plan_110" target="_blank" rel="noopener">
+        查看原方案详情 →
+      </a>
     </section>
 
     <!-- Contact Section -->
