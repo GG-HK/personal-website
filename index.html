@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>张伟 · 游艇电气工程师</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0A0B0F;
+      --card-bg: #14161D;
+      --tag-bg: #1A1D26;
+      --border-line: #1E2128;
+      --stroke: #24262E;
+      --text-primary: #F0F1F3;
+      --text-secondary: #8B8F9A;
+      --text-tertiary: #5C6068;
+      --accent: #3B82F6;
+      --accent-light: #60A5FA;
+      --white: #FFFFFF;
+      --shadow-accent: 0 8px 24px rgba(59, 130, 246, 0.4);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+      color: var(--text-primary);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* === Page Wrapper + Scaling === */
+    .page-wrapper {
+      width: 1440px;
+      transform-origin: top left;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: var(--bg);
+    }
+
+    /* === Navigation === */
+    .nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 1440px;
+      height: 72px;
+      padding: 0 80px;
+      background: var(--bg);
+    }
+
+    .nav-logo {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-border {
+      width: 100%;
+      height: 1px;
+      background: var(--border-line);
+    }
+
+    /* === Hero Section === */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 1440px;
+      height: 720px;
+      gap: 28px;
+      background: linear-gradient(to bottom, #0F172E, #0A0A0F);
+    }
+
+    .hero-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent-light);
+      letter-spacing: 4px;
+    }
+
+    .hero-name {
+      width: 100%;
+      font-size: 96px;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .hero-tagline {
+      width: 600px;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      text-align: center;
+      line-height: 1.6;
+      white-space: pre-line;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-primary {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      border-radius: 8px;
+      background: var(--accent);
+      box-shadow: var(--shadow-accent);
+      border: none;
+      cursor: pointer;
+      transition: filter 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.1);
+    }
+
+    .btn-primary span {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      white-space: nowrap;
+    }
+
+    .btn-secondary {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      border-radius: 8px;
+      background: var(--card-bg);
+      border: 1px solid var(--stroke);
+      cursor: pointer;
+      transition: border-color 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-secondary);
+    }
+
+    .btn-secondary span {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--white);
+      white-space: nowrap;
+    }
+
+    /* === Section Common === */
+    .section {
+      display: flex;
+      flex-direction: column;
+      width: 1440px;
+      padding: 120px 80px;
+      gap: 56px;
+      background: var(--bg);
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .accent-bar {
+      width: 4px;
+      height: 32px;
+      border-radius: 2px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .header-spacer {
+      flex: 1;
+      height: 1px;
+    }
+
+    .section-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-tertiary);
+      letter-spacing: 3px;
+    }
+
+    /* === About Section === */
+    .about-content {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      gap: 48px;
+    }
+
+    .about-left {
+      width: 480px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      flex-shrink: 0;
+    }
+
+    .portrait-placeholder {
+      width: 480px;
+      height: 320px;
+      border-radius: 12px;
+      background: linear-gradient(to right, #1A2647, #0D121F);
+      border: 1px solid var(--stroke);
+    }
+
+    .bio-text {
+      width: 100%;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      white-space: pre-line;
+    }
+
+    .about-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .stats-grid {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+    }
+
+    .stat-card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      gap: 8px;
+      border-radius: 12px;
+      background: var(--card-bg);
+    }
+
+    .stat-number {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .stat-label {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-secondary);
+    }
+
+    .skills-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .skills-row {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+    }
+
+    .skill-tag {
+      display: flex;
+      flex-direction: row;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: var(--tag-bg);
+      border: 1px solid var(--stroke);
+    }
+
+    .skill-tag span {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    /* === Experience Section === */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .timeline-item {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      gap: 48px;
+    }
+
+    .timeline-item.first {
+      padding: 0 0 32px 0;
+    }
+
+    .timeline-item.middle {
+      padding: 32px 0;
+    }
+
+    .timeline-item.last {
+      padding: 32px 0 0 0;
+    }
+
+    .timeline-year {
+      width: 140px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent-light);
+      flex-shrink: 0;
+    }
+
+    .timeline-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .timeline-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .timeline-company {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-secondary);
+    }
+
+    .timeline-desc {
+      width: 100%;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-tertiary);
+      line-height: 1.7;
+    }
+
+    .timeline-separator {
+      width: 100%;
+      height: 1px;
+      background: var(--border-line);
+    }
+
+    /* === Projects Section === */
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 24px;
+    }
+
+    .projects-row {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+    }
+
+    .project-card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border-radius: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--stroke);
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--text-tertiary);
+    }
+
+    .project-card-image {
+      width: 100%;
+      height: 200px;
+    }
+
+    .card1-image {
+      background: linear-gradient(to right, #14264C, #0A0F1A);
+    }
+
+    .card2-image {
+      background: linear-gradient(to right, #1A3340, #0A141A);
+    }
+
+    .card3-image {
+      background: linear-gradient(to right, #261F40, #0A0F1A);
+    }
+
+    .card4-image {
+      background: linear-gradient(to right, #0D2E38, #0A0F1A);
+    }
+
+    .project-card-content {
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      gap: 12px;
+    }
+
+    .project-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .project-desc {
+      width: 100%;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* === Contact Section === */
+    .contact-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .contact-heading {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-align: center;
+    }
+
+    .contact-info {
+      width: 100%;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    .contact-button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 40px;
+      border-radius: 8px;
+      background: var(--accent);
+      box-shadow: var(--shadow-accent);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: filter 0.2s ease;
+    }
+
+    .contact-button:hover {
+      filter: brightness(1.1);
+    }
+
+    .contact-button span {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      white-space: nowrap;
+    }
+
+    /* === Footer === */
+    .footer {
+      display: flex;
+      flex-direction: column;
+      width: 1440px;
+      padding: 48px 80px;
+      gap: 24px;
+      background: var(--bg);
+    }
+
+    .footer-border {
+      width: 100%;
+      height: 1px;
+      background: var(--border-line);
+    }
+
+    .footer-text {
+      width: 100%;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-tertiary);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-logo">ZHANG WEI</div>
+      <div class="nav-links">
+        <a href="#about">关于我</a>
+        <a href="#experience">履历</a>
+        <a href="#projects">项目</a>
+        <a href="#contact">联系</a>
+      </div>
+    </nav>
+    <div class="nav-border"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-label">游艇电气工程师</div>
+      <h1 class="hero-name">张  伟</h1>
+      <p class="hero-tagline">专注于豪华游艇电气系统设计、集成与调试
+15年行业经验 · 经手 40+ 艘游艇项目</p>
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+          <span>查看项目</span>
+        </button>
+        <button class="btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          <span>下载简历</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="section-header">
+        <div class="accent-bar"></div>
+        <h2 class="section-title">关于我</h2>
+        <div class="header-spacer"></div>
+        <span class="section-label">ABOUT</span>
+      </div>
+      <div class="about-content">
+        <div class="about-left">
+          <div class="portrait-placeholder"></div>
+          <p class="bio-text">我是张伟，一名拥有15年经验的游艇电气工程师。毕业于上海海事大学电气工程系，深耕豪华游艇电气系统领域，涵盖电力分配、自动化控制、导航通信及能源管理等核心系统。
+
+曾参与多艘40米以上超豪华游艇的电气系统从零设计到交付全流程，与意大利、荷兰等国际游艇品牌深度合作，熟悉 CE / RINA / LR 等国际认证标准。</p>
+        </div>
+        <div class="about-right">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">年行业经验</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">40+</div>
+              <div class="stat-label">游艇项目</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">8</div>
+              <div class="stat-label">专业认证</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">5</div>
+              <div class="stat-label">核心技能</div>
+            </div>
+          </div>
+          <div class="skills-title">核心技能</div>
+          <div class="skills-row">
+            <div class="skill-tag"><span>电气系统设计</span></div>
+            <div class="skill-tag"><span>PLC 编程</span></div>
+            <div class="skill-tag"><span>自动化控制</span></div>
+            <div class="skill-tag"><span>电力分配</span></div>
+          </div>
+          <div class="skills-row">
+            <div class="skill-tag"><span>导航系统</span></div>
+            <div class="skill-tag"><span>通信系统</span></div>
+            <div class="skill-tag"><span>能源管理</span></div>
+            <div class="skill-tag"><span>CE/RINA 认证</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+      <div class="section-header">
+        <div class="accent-bar"></div>
+        <h2 class="section-title">工作经历</h2>
+        <div class="header-spacer"></div>
+        <span class="section-label">EXPERIENCE</span>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item first">
+          <div class="timeline-year">2020 — 至今</div>
+          <div class="timeline-content">
+            <div class="timeline-title">首席电气工程师</div>
+            <div class="timeline-company">某游艇制造有限公司</div>
+            <p class="timeline-desc">负责 40 米以上超豪华游艇电气系统从概念设计到交付的全流程管理，主导电力系统架构、自动化控制方案及能源管理策略的制定与实施。</p>
+          </div>
+        </div>
+        <div class="timeline-separator"></div>
+        <div class="timeline-item middle">
+          <div class="timeline-year">2015 — 2020</div>
+          <div class="timeline-content">
+            <div class="timeline-title">高级电气工程师</div>
+            <div class="timeline-company">某海洋技术公司</div>
+            <p class="timeline-desc">主导多艘 30-50 米游艇的电气系统集成项目，包括配电系统、推进控制、导航通信及船载娱乐系统的设计与调试。</p>
+          </div>
+        </div>
+        <div class="timeline-separator"></div>
+        <div class="timeline-item last">
+          <div class="timeline-year">2010 — 2015</div>
+          <div class="timeline-content">
+            <div class="timeline-title">电气工程师</div>
+            <div class="timeline-company">某船舶工程公司</div>
+            <p class="timeline-desc">参与 20+ 艘游艇电气系统的安装、接线与调试工作，熟悉各类船用电气设备的选型、配置与施工规范。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+      <div class="section-header">
+        <div class="accent-bar"></div>
+        <h2 class="section-title">项目作品</h2>
+        <div class="header-spacer"></div>
+        <span class="section-label">PROJECTS</span>
+      </div>
+      <div class="projects-grid">
+        <div class="projects-row">
+          <div class="project-card">
+            <div class="project-card-image card1-image"></div>
+            <div class="project-card-content">
+              <div class="project-title">120 尺超豪华游艇电气系统</div>
+              <p class="project-desc">为 120 尺超豪华游艇设计全套电气系统，包括 3 相配电、推进控制、自动化管理及全套导航通信设备集成。</p>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-card-image card2-image"></div>
+            <div class="project-card-content">
+              <div class="project-title">游艇智能控制系统集成</div>
+              <p class="project-desc">基于 IoT 平台的游艇智能控制系统，实现灯光、空调、安防、娱乐的一体化触控管理与远程监控。</p>
+            </div>
+          </div>
+        </div>
+        <div class="projects-row">
+          <div class="project-card">
+            <div class="project-card-image card3-image"></div>
+            <div class="project-card-content">
+              <div class="project-title">混合动力游艇能源管理</div>
+              <p class="project-desc">为混合动力游艇设计能源管理系统，优化柴油机与电池的协同工作，降低油耗 30%，提升静音航行体验。</p>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-card-image card4-image"></div>
+            <div class="project-card-content">
+              <div class="project-title">游艇导航通信系统升级</div>
+              <p class="project-desc">为多艘游艇完成导航雷达、AIS、VHF 及卫星通信系统的全面升级，满足最新国际海事法规要求。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <div class="section-header">
+        <div class="accent-bar"></div>
+        <h2 class="section-title">联系方式</h2>
+        <div class="header-spacer"></div>
+        <span class="section-label">CONTACT</span>
+      </div>
+      <div class="contact-content">
+        <div class="contact-heading">有项目想聊聊？</div>
+        <div class="contact-info">邮箱  zhangwei@example.com    ·    电话  +86 138-0000-0000    ·    地址  上海市浦东新区</div>
+        <a class="contact-button" href="mailto:zhangwei@example.com">
+          <span>发送邮件</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-border"></div>
+      <div class="footer-text">Copyright 2026 张伟 · 游艇电气工程师 · All Rights Reserved</div>
+    </footer>
+  </div>
+
+  <script>
+    // === Proportional Scaling ===
+    // Preserves the original 1440px design canvas and scales proportionally
+    // to fit the viewport width, with normal vertical scrolling.
+    (function () {
+      var DESIGN_WIDTH = 1440;
+      var wrapper = document.querySelector('.page-wrapper');
+
+      function scalePage() {
+        var scale = window.innerWidth / DESIGN_WIDTH;
+        wrapper.style.transform = 'scale(' + scale + ')';
+
+        // Adjust body height to enable proper scrolling after scaling
+        // Use requestAnimationFrame to ensure the wrapper has rendered
+        requestAnimationFrame(function () {
+          var wrapperHeight = wrapper.offsetHeight;
+          document.body.style.height = (wrapperHeight * scale) + 'px';
+        });
+      }
+
+      // Initial scale
+      scalePage();
+
+      // Re-scale on resize (debounced)
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(scalePage, 100);
+      });
+
+      // Re-scale after fonts load (heights may change)
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(scalePage);
+      }
+    })();
+  </script>
+</body>
+</html>
