@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>赵洪凯 · 电气工程师</title>
+  <title>赵洪凯 · 电气工程师 | Zhao Hongkai · Electrical Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -71,6 +71,13 @@
       letter-spacing: 2px;
     }
 
+    .nav-right {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 32px;
+    }
+
     .nav-links {
       display: flex;
       flex-direction: row;
@@ -94,6 +101,41 @@
       width: 100%;
       height: 1px;
       background: var(--border-line);
+    }
+
+    /* === Language Toggle === */
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px;
+      border-radius: 8px;
+      background: var(--card-bg);
+      border: 1px solid var(--stroke);
+      cursor: pointer;
+    }
+
+    .lang-btn {
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      letter-spacing: 0.5px;
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      color: var(--white);
+      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+    }
+
+    .lang-btn:not(.active):hover {
+      color: var(--text-secondary);
     }
 
     /* === Hero Section === */
@@ -1166,30 +1208,38 @@
     <!-- Navigation -->
     <nav class="nav">
       <div class="nav-logo">ZHAO HONGKAI</div>
-      <div class="nav-links">
-        <a href="#about">关于我</a>
-        <a href="#experience">履历</a>
-        <a href="#company">前公司</a>
-        <a href="#oceanwalker">现就职</a>
-        <a href="#projects">项目</a>
-        <a href="#showcase">案例</a>
-        <a href="#contact">联系</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#about" data-zh="关于我" data-en="About">关于我</a>
+          <a href="#experience" data-zh="履历" data-en="Experience">履历</a>
+          <a href="#company" data-zh="前公司" data-en="Previous">前公司</a>
+          <a href="#oceanwalker" data-zh="现就职" data-en="Current">现就职</a>
+          <a href="#projects" data-zh="项目" data-en="Projects">项目</a>
+          <a href="#showcase" data-zh="案例" data-en="Case Study">案例</a>
+          <a href="#contact" data-zh="联系" data-en="Contact">联系</a>
+        </div>
+        <div class="lang-toggle">
+          <button class="lang-btn active" id="lang-zh" onclick="switchLang('zh')">中</button>
+          <button class="lang-btn" id="lang-en" onclick="switchLang('en')">EN</button>
+        </div>
       </div>
     </nav>
     <div class="nav-border"></div>
 
     <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-label">电气工程师</div>
-      <h1 class="hero-name">赵 洪 凯</h1>
-      <p class="hero-tagline">专注于游艇电气系统设计与施工管理
+      <div class="hero-label" data-zh="电气工程师" data-en="Electrical Engineer">电气工程师</div>
+      <h1 class="hero-name" data-zh="赵 洪 凯" data-en="ZHAO HONGKAI">赵 洪 凯</h1>
+      <p class="hero-tagline" data-zh="专注于游艇电气系统设计与施工管理
+5年游艇电气领域经验 · 独立完成多艘豪华游艇电气项目" data-en="Specialized in yacht electrical system design & construction management
+5+ years in yacht electrical engineering · Independently completed multiple luxury yacht electrical projects">专注于游艇电气系统设计与施工管理
 5年游艇电气领域经验 · 独立完成多艘豪华游艇电气项目</p>
       <div class="hero-ctas">
         <button class="btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
-          <span>查看项目</span>
+          <span data-zh="查看项目" data-en="View Projects">查看项目</span>
         </button>
         <button class="btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-          <span>下载简历</span>
+          <span data-zh="下载简历" data-en="Download Resume">下载简历</span>
         </button>
       </div>
     </section>
@@ -1198,14 +1248,18 @@
     <section class="section" id="about">
       <div class="section-header">
         <div class="accent-bar"></div>
-        <h2 class="section-title">关于我</h2>
+        <h2 class="section-title" data-zh="关于我" data-en="About Me">关于我</h2>
         <div class="header-spacer"></div>
         <span class="section-label">ABOUT</span>
       </div>
       <div class="about-content">
         <div class="about-left">
           <div class="portrait-placeholder"></div>
-          <p class="bio-text">我是赵洪凯，一名拥有5年游艇电气领域经验的电气工程师。毕业于青岛黄海学院机械制造与自动化专业，具备机械与电气跨学科理论基础。持有助理工程师职称。
+          <p class="bio-text" data-zh="我是赵洪凯，一名拥有5年游艇电气领域经验的电气工程师。毕业于青岛黄海学院机械制造与自动化专业，具备机械与电气跨学科理论基础。持有助理工程师职称。
+
+曾任职于聊城百思特游艇有限公司担任电气工程师主管，主导游艇电气系统全流程设计，独立完成50尺、65尺豪华游艇及360游艇的电气设计与现场施工，创新线束式铺设模式将施工周期从6周缩短至4周。现就职于福建天行者游艇有限公司（Oceanwalker Yachts），参与豪华游艇及新能源电动双体游艇的电气系统设计与集成工作。" data-en="I am Zhao Hongkai, an electrical engineer with 5+ years of experience in the yacht electrical engineering field. I graduated from Qingdao Huanghai University with a degree in Mechanical Manufacturing & Automation, providing me with a cross-disciplinary foundation in both mechanical and electrical engineering. I hold an Assistant Engineer certification.
+
+I previously served as Lead Electrical Engineer at Liaocheng Best Yacht Co., Ltd, where I led the full-cycle electrical system design for yachts, independently completing the electrical design and on-site construction of 50ft and 65ft luxury yachts as well as the 360 yacht. I pioneered a harness-based routing method that reduced construction time from 6 weeks to 4 weeks. I am currently with Fujian Sky Walker Yacht Co., Ltd (Oceanwalker Yachts), participating in the electrical system design and integration of luxury yachts and new-energy electric catamarans.">我是赵洪凯，一名拥有5年游艇电气领域经验的电气工程师。毕业于青岛黄海学院机械制造与自动化专业，具备机械与电气跨学科理论基础。持有助理工程师职称。
 
 曾任职于聊城百思特游艇有限公司担任电气工程师主管，主导游艇电气系统全流程设计，独立完成50尺、65尺豪华游艇及360游艇的电气设计与现场施工，创新线束式铺设模式将施工周期从6周缩短至4周。现就职于福建天行者游艇有限公司（Oceanwalker Yachts），参与豪华游艇及新能源电动双体游艇的电气系统设计与集成工作。</p>
         </div>
@@ -1213,33 +1267,33 @@
           <div class="stats-grid">
             <div class="stat-card">
               <div class="stat-number">5+</div>
-              <div class="stat-label">年行业经验</div>
+              <div class="stat-label" data-zh="年行业经验" data-en="Years Experience">年行业经验</div>
             </div>
             <div class="stat-card">
               <div class="stat-number">3+</div>
-              <div class="stat-label">游艇电气项目</div>
+              <div class="stat-label" data-zh="游艇电气项目" data-en="Yacht Projects">游艇电气项目</div>
             </div>
             <div class="stat-card">
               <div class="stat-number">1</div>
-              <div class="stat-label">专业认证</div>
+              <div class="stat-label" data-zh="专业认证" data-en="Certifications">专业认证</div>
             </div>
             <div class="stat-card">
               <div class="stat-number">5</div>
-              <div class="stat-label">人团队管理</div>
+              <div class="stat-label" data-zh="人团队管理" data-en="Team Members">人团队管理</div>
             </div>
           </div>
-          <div class="skills-title">核心技能</div>
+          <div class="skills-title" data-zh="核心技能" data-en="Core Skills">核心技能</div>
           <div class="skills-row">
-            <div class="skill-tag"><span>AutoCAD 电气设计</span></div>
-            <div class="skill-tag"><span>游艇配电系统</span></div>
-            <div class="skill-tag"><span>照明系统集成</span></div>
-            <div class="skill-tag"><span>监控系统集成</span></div>
+            <div class="skill-tag"><span data-zh="AutoCAD 电气设计" data-en="AutoCAD Electrical Design">AutoCAD 电气设计</span></div>
+            <div class="skill-tag"><span data-zh="游艇配电系统" data-en="Yacht Power Distribution">游艇配电系统</span></div>
+            <div class="skill-tag"><span data-zh="照明系统集成" data-en="Lighting System Integration">照明系统集成</span></div>
+            <div class="skill-tag"><span data-zh="监控系统集成" data-en="Monitoring System Integration">监控系统集成</span></div>
           </div>
           <div class="skills-row">
-            <div class="skill-tag"><span>故障诊断</span></div>
-            <div class="skill-tag"><span>线束铺设优化</span></div>
-            <div class="skill-tag"><span>施工标准化</span></div>
-            <div class="skill-tag"><span>团队管理</span></div>
+            <div class="skill-tag"><span data-zh="故障诊断" data-en="Fault Diagnosis">故障诊断</span></div>
+            <div class="skill-tag"><span data-zh="线束铺设优化" data-en="Harness Routing Optimization">线束铺设优化</span></div>
+            <div class="skill-tag"><span data-zh="施工标准化" data-en="Construction Standardization">施工标准化</span></div>
+            <div class="skill-tag"><span data-zh="团队管理" data-en="Team Management">团队管理</span></div>
           </div>
         </div>
       </div>
@@ -1249,35 +1303,35 @@
     <section class="section" id="experience">
       <div class="section-header">
         <div class="accent-bar"></div>
-        <h2 class="section-title">工作经历</h2>
+        <h2 class="section-title" data-zh="工作经历" data-en="Work Experience">工作经历</h2>
         <div class="header-spacer"></div>
         <span class="section-label">EXPERIENCE</span>
       </div>
       <div class="timeline">
         <div class="timeline-item first">
-          <div class="timeline-year">2025 — 至今</div>
+          <div class="timeline-year" data-zh="2025 — 至今" data-en="2025 — Present">2025 — 至今</div>
           <div class="timeline-content">
-            <div class="timeline-title">电气工程师</div>
-            <div class="timeline-company">福建天行者游艇有限公司 (Oceanwalker Yachts)</div>
-            <p class="timeline-desc">就职于 Oceanwalker Yachts，参与豪华游艇及新能源电动双体游艇的电气系统设计与集成工作。Oceanwalker 是一家以"突破边界"为核心理念的新锐豪华游艇品牌，产品出口至新加坡、迪拜、巴哈马等国际市场。</p>
+            <div class="timeline-title" data-zh="电气工程师" data-en="Electrical Engineer">电气工程师</div>
+            <div class="timeline-company" data-zh="福建天行者游艇有限公司 (Oceanwalker Yachts)" data-en="Fujian Sky Walker Yacht Co., Ltd (Oceanwalker Yachts)">福建天行者游艇有限公司 (Oceanwalker Yachts)</div>
+            <p class="timeline-desc" data-zh="就职于 Oceanwalker Yachts，参与豪华游艇及新能源电动双体游艇的电气系统设计与集成工作。Oceanwalker 是一家以"突破边界"为核心理念的新锐豪华游艇品牌，产品出口至新加坡、迪拜、巴哈马等国际市场。" data-en="Currently with Oceanwalker Yachts, participating in the electrical system design and integration of luxury yachts and new-energy electric catamarans. Oceanwalker is an emerging luxury yacht brand driven by the core philosophy of "breaking boundaries," with products exported to international markets including Singapore, Dubai, and the Bahamas.">就职于 Oceanwalker Yachts，参与豪华游艇及新能源电动双体游艇的电气系统设计与集成工作。Oceanwalker 是一家以"突破边界"为核心理念的新锐豪华游艇品牌，产品出口至新加坡、迪拜、巴哈马等国际市场。</p>
           </div>
         </div>
         <div class="timeline-separator"></div>
         <div class="timeline-item middle">
           <div class="timeline-year">2020.10 — 2025</div>
           <div class="timeline-content">
-            <div class="timeline-title">电气工程师主管</div>
-            <div class="timeline-company">聊城百思特游艇有限公司</div>
-            <p class="timeline-desc">主导游艇电气系统全流程设计，完成电气架构规划、设备选型及供应商资源库建设。制定标准化安装规范，创新线束式铺设模式，将施工周期从6周缩短至4周，支撑公司年订单量增长15%。统筹5人团队，独立完成50尺、65尺豪华游艇及360游艇的电气设计与现场施工。</p>
+            <div class="timeline-title" data-zh="电气工程师主管" data-en="Lead Electrical Engineer">电气工程师主管</div>
+            <div class="timeline-company" data-zh="聊城百思特游艇有限公司" data-en="Liaocheng Best Yacht Co., Ltd">聊城百思特游艇有限公司</div>
+            <p class="timeline-desc" data-zh="主导游艇电气系统全流程设计，完成电气架构规划、设备选型及供应商资源库建设。制定标准化安装规范，创新线束式铺设模式，将施工周期从6周缩短至4周，支撑公司年订单量增长15%。统筹5人团队，独立完成50尺、65尺豪华游艇及360游艇的电气设计与现场施工。" data-en="Led the full-cycle electrical system design for yachts, completing electrical architecture planning, equipment selection, and supplier resource database development. Established standardized installation specifications and pioneered a harness-based routing method, reducing construction time from 6 weeks to 4 weeks and supporting a 15% annual order growth. Managed a 5-person team, independently completing the electrical design and on-site construction of 50ft and 65ft luxury yachts and the 360 yacht.">主导游艇电气系统全流程设计，完成电气架构规划、设备选型及供应商资源库建设。制定标准化安装规范，创新线束式铺设模式，将施工周期从6周缩短至4周，支撑公司年订单量增长15%。统筹5人团队，独立完成50尺、65尺豪华游艇及360游艇的电气设计与现场施工。</p>
           </div>
         </div>
         <div class="timeline-separator"></div>
         <div class="timeline-item last">
           <div class="timeline-year">2015.09 — 2019.06</div>
           <div class="timeline-content">
-            <div class="timeline-title">机械制造与自动化</div>
-            <div class="timeline-company">青岛黄海学院</div>
-            <p class="timeline-desc">系统掌握机械设计、制造原理等核心课程，为电气系统设计奠定跨学科理论基础。在校期间获工程技术专业助理工程师职称。</p>
+            <div class="timeline-title" data-zh="机械制造与自动化" data-en="Mechanical Manufacturing & Automation">机械制造与自动化</div>
+            <div class="timeline-company" data-zh="青岛黄海学院" data-en="Qingdao Huanghai University">青岛黄海学院</div>
+            <p class="timeline-desc" data-zh="系统掌握机械设计、制造原理等核心课程，为电气系统设计奠定跨学科理论基础。在校期间获工程技术专业助理工程师职称。" data-en="Systematically studied core courses including mechanical design and manufacturing principles, laying a cross-disciplinary theoretical foundation for electrical system design. Obtained the Assistant Engineer certification in engineering technology during university.">系统掌握机械设计、制造原理等核心课程，为电气系统设计奠定跨学科理论基础。在校期间获工程技术专业助理工程师职称。</p>
           </div>
         </div>
       </div>
@@ -1287,20 +1341,24 @@
     <section class="section" id="company">
       <div class="section-header">
         <div class="accent-bar"></div>
-        <h2 class="section-title">前公司</h2>
+        <h2 class="section-title" data-zh="前公司" data-en="Previous Company">前公司</h2>
         <div class="header-spacer"></div>
         <span class="section-label">PREVIOUS</span>
       </div>
 
       <!-- Company Banner -->
       <div class="company-banner">
-        <div class="company-tag">BEST YACHT · 百思特游艇</div>
-        <div class="company-name">聊城百思特游艇有限公司</div>
+        <div class="company-tag">BEST YACHT · <span data-zh="百思特游艇" data-en="Best Yacht">百思特游艇</span></div>
+        <div class="company-name" data-zh="聊城百思特游艇有限公司" data-en="Liaocheng Best Yacht Co., Ltd">聊城百思特游艇有限公司</div>
         <div class="company-slogan">From Shore to Skyline — Every Voyage is a Journey of Prestige</div>
       </div>
 
       <!-- Company Overview -->
-      <p class="company-overview">百思特游艇（BEST YACHT）是一家专注于豪华游艇研发与制造的创新型企业，秉持"从最初的草图到最终的航程，每一步都凝聚精湛工艺与不懈创新"的理念。公司不仅制造游艇，更致力于创造一种生活方式。
+      <p class="company-overview" data-zh="百思特游艇（BEST YACHT）是一家专注于豪华游艇研发与制造的创新型企业，秉持"从最初的草图到最终的航程，每一步都凝聚精湛工艺与不懈创新"的理念。公司不仅制造游艇，更致力于创造一种生活方式。
+
+在 BEST，制造是我们的专长。我们以挑战为导航星，以创新为指南针，立志成为客户最喜爱的海洋生活方式品牌。通过创新设计和品质服务，将精湛工艺与前瞻视角相结合，为客户创造非凡的游艇体验。" data-en="Best Yacht (BEST YACHT) is an innovative enterprise focused on the R&D and manufacturing of luxury yachts, upholding the philosophy that "from the initial sketch to the final voyage, every step embodies exquisite craftsmanship and relentless innovation." The company does not merely build yachts — it strives to create a lifestyle.
+
+At BEST, manufacturing is our expertise. We navigate by challenges and are guided by innovation, aspiring to become our customers' favorite ocean lifestyle brand. Through innovative design and quality service, we combine exquisite craftsmanship with a forward-looking vision to create extraordinary yacht experiences for our clients.">百思特游艇（BEST YACHT）是一家专注于豪华游艇研发与制造的创新型企业，秉持"从最初的草图到最终的航程，每一步都凝聚精湛工艺与不懈创新"的理念。公司不仅制造游艇，更致力于创造一种生活方式。
 
 在 BEST，制造是我们的专长。我们以挑战为导航星，以创新为指南针，立志成为客户最喜爱的海洋生活方式品牌。通过创新设计和品质服务，将精湛工艺与前瞻视角相结合，为客户创造非凡的游艇体验。</p>
 
@@ -1308,19 +1366,19 @@
       <div class="company-stats">
         <div class="company-stat">
           <div class="company-stat-value">440</div>
-          <div class="company-stat-label">占地（亩）</div>
+          <div class="company-stat-label" data-zh="占地（亩）" data-en="Land Area (mu)">占地（亩）</div>
         </div>
         <div class="company-stat">
           <div class="company-stat-value">28万</div>
-          <div class="company-stat-label">建筑面积（㎡）</div>
+          <div class="company-stat-label" data-zh="建筑面积（㎡）" data-en="Building Area (sqm)">建筑面积（㎡）</div>
         </div>
         <div class="company-stat">
           <div class="company-stat-value">6000</div>
-          <div class="company-stat-label">水域面积（亩）</div>
+          <div class="company-stat-label" data-zh="水域面积（亩）" data-en="Water Area (mu)">水域面积（亩）</div>
         </div>
         <div class="company-stat">
           <div class="company-stat-value">100T</div>
-          <div class="company-stat-label">游艇举升能力</div>
+          <div class="company-stat-label" data-zh="游艇举升能力" data-en="Yacht Lifting Capacity">游艇举升能力</div>
         </div>
       </div>
 
@@ -1328,29 +1386,29 @@
       <div class="company-features">
         <div class="feature-card">
           <div class="feature-icon">★</div>
-          <div class="feature-title">制造资质</div>
-          <div class="feature-desc">获得船舶设计、游艇制造、图纸送审及复合材料生产等多项制造资质，具备完整的游艇研发制造能力。</div>
+          <div class="feature-title" data-zh="制造资质" data-en="Manufacturing Qualifications">制造资质</div>
+          <div class="feature-desc" data-zh="获得船舶设计、游艇制造、图纸送审及复合材料生产等多项制造资质，具备完整的游艇研发制造能力。" data-en="Holds multiple manufacturing qualifications including vessel design, yacht manufacturing, plan approval, and composite material production, with complete yacht R&D and manufacturing capabilities.">获得船舶设计、游艇制造、图纸送审及复合材料生产等多项制造资质，具备完整的游艇研发制造能力。</div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">◈</div>
-          <div class="feature-title">基地建设与规模</div>
-          <div class="feature-desc">独立开发的产业基地位于山东聊城国家级经济开发区，占地 440 亩，建筑面积 28 万平方米。配备专用试航水系、码头及 8 公里水域，专业游艇试航设施可举升 100 吨级游艇，涵盖 100 余项测试功能。</div>
+          <div class="feature-title" data-zh="基地建设与规模" data-en="Facility & Scale">基地建设与规模</div>
+          <div class="feature-desc" data-zh="独立开发的产业基地位于山东聊城国家级经济开发区，占地 440 亩，建筑面积 28 万平方米。配备专用试航水系、码头及 8 公里水域，专业游艇试航设施可举升 100 吨级游艇，涵盖 100 余项测试功能。" data-en="The independently developed industrial base is located in the Liaocheng National Economic Development Zone, Shandong, covering 440 mu with a building area of 280,000 sqm. Equipped with dedicated trial waters, docks, and an 8km waterway, the professional yacht trial facility can lift 100-ton class yachts and covers over 100 testing functions.">独立开发的产业基地位于山东聊城国家级经济开发区，占地 440 亩，建筑面积 28 万平方米。配备专用试航水系、码头及 8 公里水域，专业游艇试航设施可举升 100 吨级游艇，涵盖 100 余项测试功能。</div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">⬡</div>
-          <div class="feature-title">仓储与运输</div>
-          <div class="feature-desc">基地建有专业化仓储体系，包括按国家标准建设的专业危险品仓库、全套监控设施及危险品应急系统，保障生产安全与运输规范。</div>
+          <div class="feature-title" data-zh="仓储与运输" data-en="Storage & Transport">仓储与运输</div>
+          <div class="feature-desc" data-zh="基地建有专业化仓储体系，包括按国家标准建设的专业危险品仓库、全套监控设施及危险品应急系统，保障生产安全与运输规范。" data-en="The base features a professional warehousing system, including a hazardous materials warehouse built to national standards, comprehensive monitoring facilities, and a hazardous materials emergency response system, ensuring production safety and transport compliance.">基地建有专业化仓储体系，包括按国家标准建设的专业危险品仓库、全套监控设施及危险品应急系统，保障生产安全与运输规范。</div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">⟁</div>
-          <div class="feature-title">现代化生产工艺</div>
-          <div class="feature-desc">采用国际先进的集成制造工艺替代传统船体生产模式，实现流水线标准化生产，解决传统游艇生产中工艺落后、模式单一、周期长、成本高等问题。</div>
+          <div class="feature-title" data-zh="现代化生产工艺" data-en="Modern Production Process">现代化生产工艺</div>
+          <div class="feature-desc" data-zh="采用国际先进的集成制造工艺替代传统船体生产模式，实现流水线标准化生产，解决传统游艇生产中工艺落后、模式单一、周期长、成本高等问题。" data-en="Adopts internationally advanced integrated manufacturing processes to replace traditional hull production models, achieving assembly-line standardized production and resolving issues of outdated processes, monotonous patterns, long cycles, and high costs in traditional yacht manufacturing.">采用国际先进的集成制造工艺替代传统船体生产模式，实现流水线标准化生产，解决传统游艇生产中工艺落后、模式单一、周期长、成本高等问题。</div>
         </div>
       </div>
 
       <!-- Company Link -->
       <a class="showcase-link" href="https://www.best-yt.com/" target="_blank" rel="noopener">
-        访问公司官网 →
+        <span data-zh="访问公司官网" data-en="Visit Company Website">访问公司官网</span> →
       </a>
     </section>
 
@@ -1358,7 +1416,7 @@
     <section class="section" id="oceanwalker">
       <div class="section-header">
         <div class="accent-bar"></div>
-        <h2 class="section-title">现就职公司</h2>
+        <h2 class="section-title" data-zh="现就职公司" data-en="Current Company">现就职公司</h2>
         <div class="header-spacer"></div>
         <span class="section-label">CURRENT</span>
       </div>
@@ -1366,13 +1424,17 @@
       <!-- Banner -->
       <div class="ow-banner">
         <div class="ow-tag">OCEANWALKER YACHTS</div>
-        <div class="ow-name">福建天行者游艇有限公司</div>
+        <div class="ow-name" data-zh="福建天行者游艇有限公司" data-en="Fujian Sky Walker Yacht Co., Ltd">福建天行者游艇有限公司</div>
         <div class="ow-name-en">FUJIAN SKY WALKER YACHT CO., LTD</div>
         <div class="ow-slogan">"Born of Passion, Forged by Breaking Boundaries"</div>
       </div>
 
       <!-- Overview -->
-      <p class="ow-overview">Oceanwalker Yachts 是一家专注于豪华游艇研发与制造的新锐品牌，秉持"重新定义海洋体验"的信念。品牌认为真正的豪华不在于浮华展示，而在于卓越的航行性能、直觉化的智能交互、对环境和谐的承诺，以及触动灵魂的独特设计。
+      <p class="ow-overview" data-zh="Oceanwalker Yachts 是一家专注于豪华游艇研发与制造的新锐品牌，秉持"重新定义海洋体验"的信念。品牌认为真正的豪华不在于浮华展示，而在于卓越的航行性能、直觉化的智能交互、对环境和谐的承诺，以及触动灵魂的独特设计。
+
+创立三年间，Oceanwalker 从零起步，以"突破边界"的勇气打破传统制造思维，消解豪华与可持续之间的虚假对立，挑战用户对游艇的既有认知，迅速在专业领域获得广泛认可。产品已出口至新加坡、迪拜、巴哈马等国际市场，并建立覆盖五大区域的全球经销商网络。" data-en="Oceanwalker Yachts is an emerging brand focused on the R&D and manufacturing of luxury yachts, driven by the belief in "redefining the ocean experience." The brand believes that true luxury lies not in ostentatious display, but in exceptional sailing performance, intuitive smart interaction, a commitment to environmental harmony, and soul-stirring unique design.
+
+In just three years since its founding, Oceanwalker started from scratch and, with the courage to "break boundaries," disrupted traditional manufacturing thinking, dissolved the false dichotomy between luxury and sustainability, challenged users' preconceptions of yachts, and rapidly gained widespread recognition in the professional field. Products have been exported to international markets including Singapore, Dubai, and the Bahamas, with a global dealer network covering five major regions.">Oceanwalker Yachts 是一家专注于豪华游艇研发与制造的新锐品牌，秉持"重新定义海洋体验"的信念。品牌认为真正的豪华不在于浮华展示，而在于卓越的航行性能、直觉化的智能交互、对环境和谐的承诺，以及触动灵魂的独特设计。
 
 创立三年间，Oceanwalker 从零起步，以"突破边界"的勇气打破传统制造思维，消解豪华与可持续之间的虚假对立，挑战用户对游艇的既有认知，迅速在专业领域获得广泛认可。产品已出口至新加坡、迪拜、巴哈马等国际市场，并建立覆盖五大区域的全球经销商网络。</p>
 
@@ -1384,13 +1446,13 @@
           </div>
           <div class="fleet-content">
             <div class="fleet-name">Oceanwalker S60</div>
-            <div class="fleet-desc">Luxury And Stylish — 品牌旗舰豪华双体游艇</div>
+            <div class="fleet-desc" data-zh="Luxury And Stylish — 品牌旗舰豪华双体游艇" data-en="Luxury And Stylish — Brand flagship luxury catamaran">Luxury And Stylish — 品牌旗舰豪华双体游艇</div>
             <div class="fleet-specs">
-              <div class="fleet-spec-row"><span class="fleet-spec-label">船长</span><span class="fleet-spec-value">18.87 m</span></div>
-              <div class="fleet-spec-row"><span class="fleet-spec-label">型宽</span><span class="fleet-spec-value">8.38 m</span></div>
-              <div class="fleet-spec-row"><span class="fleet-spec-label">舱室</span><span class="fleet-spec-value">3 / 4 间</span></div>
-              <div class="fleet-spec-row"><span class="fleet-spec-label">最大航速</span><span class="fleet-spec-value">18 节</span></div>
-              <div class="fleet-spec-row"><span class="fleet-spec-label">发动机</span><span class="fleet-spec-value">Volvo Penta D6-440 ×2</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label" data-zh="船长" data-en="Length">船长</span><span class="fleet-spec-value">18.87 m</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label" data-zh="型宽" data-en="Beam">型宽</span><span class="fleet-spec-value">8.38 m</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label" data-zh="舱室" data-en="Cabins">舱室</span><span class="fleet-spec-value">3 / 4</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label" data-zh="最大航速" data-en="Max Speed">最大航速</span><span class="fleet-spec-value" data-zh="18 节" data-en="18 kn">18 节</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label" data-zh="发动机" data-en="Engines">发动机</span><span class="fleet-spec-value">Volvo Penta D6-440 ×2</span></div>
             </div>
           </div>
         </div>
@@ -1400,13 +1462,13 @@
           </div>
           <div class="fleet-content">
             <div class="fleet-name">Oceanwalker X62</div>
-            <div class="fleet-desc">Extended Luxury — 扩展型豪华游艇系列</div>
+            <div class="fleet-desc" data-zh="Extended Luxury — 扩展型豪华游艇系列" data-en="Extended Luxury — Extended luxury yacht series">Extended Luxury — 扩展型豪华游艇系列</div>
             <div class="fleet-specs">
-              <div class="fleet-spec-row"><span class="fleet-spec-label">定位</span><span class="fleet-spec-value">大型豪华双体</span></div>
-              <div class="fleet-spec-row"><span class="fleet-spec-label">系列</span><span class="fleet-spec-value">X 系列</span></div>
-              <div class="fleet-spec-row"><span class="fleet-spec-label">特点</span><span class="fleet-spec-value">更大空间与续航</span></div>
-              <div class="fleet-spec-row"><span class="fleet-spec-label">适用</span><span class="fleet-spec-value">远洋巡航</span></div>
-              <div class="fleet-spec-row"><span class="fleet-spec-label">定制</span><span class="fleet-spec-value">支持个性化配置</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label" data-zh="定位" data-en="Category">定位</span><span class="fleet-spec-value" data-zh="大型豪华双体" data-en="Large Luxury Catamaran">大型豪华双体</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label" data-zh="系列" data-en="Series">系列</span><span class="fleet-spec-value" data-zh="X 系列" data-en="X Series">X 系列</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label" data-zh="特点" data-en="Features">特点</span><span class="fleet-spec-value" data-zh="更大空间与续航" data-en="More Space & Range">更大空间与续航</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label" data-zh="适用" data-en="Best For">适用</span><span class="fleet-spec-value" data-zh="远洋巡航" data-en="Ocean Cruising">远洋巡航</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label" data-zh="定制" data-en="Custom">定制</span><span class="fleet-spec-value" data-zh="支持个性化配置" data-en="Personalized Config">支持个性化配置</span></div>
             </div>
           </div>
         </div>
@@ -1416,13 +1478,13 @@
           </div>
           <div class="fleet-content">
             <div class="fleet-name">Oceanwalker 53</div>
-            <div class="fleet-desc">Versatile Cruiser — 灵动型巡航游艇</div>
+            <div class="fleet-desc" data-zh="Versatile Cruiser — 灵动型巡航游艇" data-en="Versatile Cruiser — Agile cruising yacht">Versatile Cruiser — 灵动型巡航游艇</div>
             <div class="fleet-specs">
-              <div class="fleet-spec-row"><span class="fleet-spec-label">定位</span><span class="fleet-spec-value">中型豪华游艇</span></div>
-              <div class="fleet-spec-row"><span class="fleet-spec-label">系列</span><span class="fleet-spec-value">经典系列</span></div>
-              <div class="fleet-spec-row"><span class="fleet-spec-label">特点</span><span class="fleet-spec-value">灵活操控易停泊</span></div>
-              <div class="fleet-spec-row"><span class="fleet-spec-label">适用</span><span class="fleet-spec-value">近海与沿岸</span></div>
-              <div class="fleet-spec-row"><span class="fleet-spec-label">定制</span><span class="fleet-spec-value">支持个性化配置</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label" data-zh="定位" data-en="Category">定位</span><span class="fleet-spec-value" data-zh="中型豪华游艇" data-en="Mid-size Luxury Yacht">中型豪华游艇</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label" data-zh="系列" data-en="Series">系列</span><span class="fleet-spec-value" data-zh="经典系列" data-en="Classic Series">经典系列</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label" data-zh="特点" data-en="Features">特点</span><span class="fleet-spec-value" data-zh="灵活操控易停泊" data-en="Agile & Easy Berthing">灵活操控易停泊</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label" data-zh="适用" data-en="Best For">适用</span><span class="fleet-spec-value" data-zh="近海与沿岸" data-en="Coastal & Near-shore">近海与沿岸</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label" data-zh="定制" data-en="Custom">定制</span><span class="fleet-spec-value" data-zh="支持个性化配置" data-en="Personalized Config">支持个性化配置</span></div>
             </div>
           </div>
         </div>
@@ -1431,23 +1493,23 @@
       <!-- Global Presence -->
       <div class="company-stats">
         <div class="presence-card">
-          <div class="presence-region">美国</div>
+          <div class="presence-region" data-zh="美国" data-en="USA">美国</div>
           <div class="presence-label">U.S.</div>
         </div>
         <div class="presence-card">
-          <div class="presence-region">欧洲</div>
+          <div class="presence-region" data-zh="欧洲" data-en="Europe">欧洲</div>
           <div class="presence-label">EUROPE</div>
         </div>
         <div class="presence-card">
-          <div class="presence-region">阿联酋</div>
+          <div class="presence-region" data-zh="阿联酋" data-en="UAE">阿联酋</div>
           <div class="presence-label">UAE</div>
         </div>
         <div class="presence-card">
-          <div class="presence-region">新加坡</div>
+          <div class="presence-region" data-zh="新加坡" data-en="Singapore">新加坡</div>
           <div class="presence-label">SINGAPORE</div>
         </div>
         <div class="presence-card">
-          <div class="presence-region">印度尼西亚</div>
+          <div class="presence-region" data-zh="印度尼西亚" data-en="Indonesia">印度尼西亚</div>
           <div class="presence-label">INDONESIA</div>
         </div>
       </div>
@@ -1456,29 +1518,29 @@
       <div class="achievement-list">
         <div class="achievement-item">
           <div class="achievement-date">2026.01</div>
-          <div class="achievement-text"><strong>S60 新能源双体游艇开启环球航行</strong> — Oceanwalker S60 搭载太阳能与锂电池系统，从漳州招银港启航，正式开启为期三年的环球航行。采用"自驾出境"模式，较传统货船运输节省近 10 万美元物流成本，全面验证游艇续航力与系统稳定性。</div>
+          <div class="achievement-text"><strong data-zh="S60 新能源双体游艇开启环球航行" data-en="S60 New-Energy Catamaran Begins Global Voyage">S60 新能源双体游艇开启环球航行</strong> — <span data-zh="Oceanwalker S60 搭载太阳能与锂电池系统，从漳州招银港启航，正式开启为期三年的环球航行。采用"自驾出境"模式，较传统货船运输节省近 10 万美元物流成本，全面验证游艇续航力与系统稳定性。" data-en="The Oceanwalker S60, equipped with solar and lithium battery systems, departed from Zhangzhou Zhaoyin Port, officially embarking on a three-year global voyage. Using a "self-driven outbound" mode, it saved nearly $100,000 in logistics costs compared to traditional cargo shipping, fully validating the yacht's range and system stability.">Oceanwalker S60 搭载太阳能与锂电池系统，从漳州招银港启航，正式开启为期三年的环球航行。采用"自驾出境"模式，较传统货船运输节省近 10 万美元物流成本，全面验证游艇续航力与系统稳定性。</span></div>
         </div>
         <div class="achievement-item">
           <div class="achievement-date">2026.04</div>
-          <div class="achievement-text"><strong>S60e 交付全球首个碳中和游艇社区</strong> — Oceanwalker S60e 太阳能电动双体游艇交付至巴哈马 Club Ki'ama，加入全球首个提供碳中和游艇船队的私人岛屿俱乐部，彰显品牌在可持续海事生活方式领域的持续承诺。</div>
+          <div class="achievement-text"><strong data-zh="S60e 交付全球首个碳中和游艇社区" data-en="S60e Delivered to World's First Carbon-Neutral Yacht Community">S60e 交付全球首个碳中和游艇社区</strong> — <span data-zh="Oceanwalker S60e 太阳能电动双体游艇交付至巴哈马 Club Ki'ama，加入全球首个提供碳中和游艇船队的私人岛屿俱乐部，彰显品牌在可持续海事生活方式领域的持续承诺。" data-en="The Oceanwalker S60e solar-electric catamaran was delivered to Club Ki'ama in the Bahamas, joining the world's first private island club offering a carbon-neutral yacht fleet, demonstrating the brand's ongoing commitment to sustainable maritime lifestyles.">Oceanwalker S60e 太阳能电动双体游艇交付至巴哈马 Club Ki'ama，加入全球首个提供碳中和游艇船队的私人岛屿俱乐部，彰显品牌在可持续海事生活方式领域的持续承诺。</span></div>
         </div>
         <div class="achievement-item">
           <div class="achievement-date">2025.12</div>
-          <div class="achievement-text"><strong>参展香港国际游艇展</strong> — 在香港清水湾游艇会举办的第 26 届香港国际游艇展上展出，吸引来自中国、韩国、东南亚、欧洲及俄罗斯的访客，展示品牌国际化布局。</div>
+          <div class="achievement-text"><strong data-zh="参展香港国际游艇展" data-en="Exhibited at Hong Kong International Boat Show">参展香港国际游艇展</strong> — <span data-zh="在香港清水湾游艇会举办的第 26 届香港国际游艇展上展出，吸引来自中国、韩国、东南亚、欧洲及俄罗斯的访客，展示品牌国际化布局。" data-en="Exhibited at the 26th Hong Kong International Boat Show held at the Clearwater Bay Golf & Country Club, attracting visitors from China, South Korea, Southeast Asia, Europe, and Russia, showcasing the brand's international presence.">在香港清水湾游艇会举办的第 26 届香港国际游艇展上展出，吸引来自中国、韩国、东南亚、欧洲及俄罗斯的访客，展示品牌国际化布局。</span></div>
         </div>
         <div class="achievement-item">
           <div class="achievement-date">2025.10</div>
-          <div class="achievement-text"><strong>S60 Revolution Edition 全球首发</strong> — 在劳德代尔堡国际游艇展 (FLIBS) 上全球首发 S60 Revolution Edition，搭载 9kW 太阳能板与 32kW 发电机，融合可持续理念与精炼的船上生活体验。</div>
+          <div class="achievement-text"><strong data-zh="S60 Revolution Edition 全球首发" data-en="S60 Revolution Edition Global Debut">S60 Revolution Edition 全球首发</strong> — <span data-zh="在劳德代尔堡国际游艇展 (FLIBS) 上全球首发 S60 Revolution Edition，搭载 9kW 太阳能板与 32kW 发电机，融合可持续理念与精炼的船上生活体验。" data-en="Globally debuted the S60 Revolution Edition at the Fort Lauderdale International Boat Show (FLIBS), equipped with 9kW solar panels and a 32kW generator, blending sustainability concepts with refined onboard living experiences.">在劳德代尔堡国际游艇展 (FLIBS) 上全球首发 S60 Revolution Edition，搭载 9kW 太阳能板与 32kW 发电机，融合可持续理念与精炼的船上生活体验。</span></div>
         </div>
         <div class="achievement-item">
           <div class="achievement-date">2025.04</div>
-          <div class="achievement-text"><strong>参展新加坡游艇节</strong> — 在 ONE°15 Marina Sentosa Cove 举办的新加坡游艇节上亮相，吸引超过 12,000 名访客，巩固品牌作为亚洲领先游艇品牌的地位。</div>
+          <div class="achievement-text"><strong data-zh="参展新加坡游艇节" data-en="Exhibited at Singapore Yachting Festival">参展新加坡游艇节</strong> — <span data-zh="在 ONE°15 Marina Sentosa Cove 举办的新加坡游艇节上亮相，吸引超过 12,000 名访客，巩固品牌作为亚洲领先游艇品牌的地位。" data-en="Showcased at the Singapore Yachting Festival held at ONE°15 Marina Sentosa Cove, attracting over 12,000 visitors and consolidating the brand's position as a leading Asian yacht brand.">在 ONE°15 Marina Sentosa Cove 举办的新加坡游艇节上亮相，吸引超过 12,000 名访客，巩固品牌作为亚洲领先游艇品牌的地位。</span></div>
         </div>
       </div>
 
       <!-- Company Link -->
       <a class="showcase-link" href="https://www.oceanwalkeryacht.com/" target="_blank" rel="noopener">
-        访问 Oceanwalker 官网 →
+        <span data-zh="访问 Oceanwalker 官网" data-en="Visit Oceanwalker Website">访问 Oceanwalker 官网</span> →
       </a>
     </section>
 
@@ -1486,7 +1548,7 @@
     <section class="section" id="projects">
       <div class="section-header">
         <div class="accent-bar"></div>
-        <h2 class="section-title">项目作品</h2>
+        <h2 class="section-title" data-zh="项目作品" data-en="Projects">项目作品</h2>
         <div class="header-spacer"></div>
         <span class="section-label">PROJECTS</span>
       </div>
@@ -1495,15 +1557,15 @@
           <div class="project-card">
             <div class="project-card-image card1-image"></div>
             <div class="project-card-content">
-              <div class="project-title">50 尺豪华游艇电气系统</div>
-              <p class="project-desc">独立完成50尺豪华游艇全套电气系统设计与现场施工，包括配电、照明、监控及导航系统集成，并完成后续调试试航工作。</p>
+              <div class="project-title" data-zh="50 尺豪华游艇电气系统" data-en="50ft Luxury Yacht Electrical System">50 尺豪华游艇电气系统</div>
+              <p class="project-desc" data-zh="独立完成50尺豪华游艇全套电气系统设计与现场施工，包括配电、照明、监控及导航系统集成，并完成后续调试试航工作。" data-en="Independently completed the full electrical system design and on-site construction for a 50ft luxury yacht, including power distribution, lighting, monitoring, and navigation system integration, followed by commissioning and sea trials.">独立完成50尺豪华游艇全套电气系统设计与现场施工，包括配电、照明、监控及导航系统集成，并完成后续调试试航工作。</p>
             </div>
           </div>
           <div class="project-card">
             <div class="project-card-image card2-image"></div>
             <div class="project-card-content">
-              <div class="project-title">65 尺游艇电气设计与安装</div>
-              <p class="project-desc">完成65尺游艇电气系统设计，负责现场实际操作安装及后续调试试航工作，确保各系统可靠运行。</p>
+              <div class="project-title" data-zh="65 尺游艇电气设计与安装" data-en="65ft Yacht Electrical Design & Installation">65 尺游艇电气设计与安装</div>
+              <p class="project-desc" data-zh="完成65尺游艇电气系统设计，负责现场实际操作安装及后续调试试航工作，确保各系统可靠运行。" data-en="Completed the electrical system design for a 65ft yacht, responsible for on-site installation and subsequent commissioning and sea trials, ensuring reliable operation of all systems.">完成65尺游艇电气系统设计，负责现场实际操作安装及后续调试试航工作，确保各系统可靠运行。</p>
             </div>
           </div>
         </div>
@@ -1511,15 +1573,15 @@
           <div class="project-card">
             <div class="project-card-image card3-image"></div>
             <div class="project-card-content">
-              <div class="project-title">360 游艇电气系统设计</div>
-              <p class="project-desc">完成360游艇电气系统全套设计，涵盖电力分配、自动化控制及设备选型，满足游艇各项功能需求。</p>
+              <div class="project-title" data-zh="360 游艇电气系统设计" data-en="360 Yacht Electrical System Design">360 游艇电气系统设计</div>
+              <p class="project-desc" data-zh="完成360游艇电气系统全套设计，涵盖电力分配、自动化控制及设备选型，满足游艇各项功能需求。" data-en="Completed the full electrical system design for the 360 yacht, covering power distribution, automation control, and equipment selection, meeting all functional requirements of the yacht.">完成360游艇电气系统全套设计，涵盖电力分配、自动化控制及设备选型，满足游艇各项功能需求。</p>
             </div>
           </div>
           <div class="project-card">
             <div class="project-card-image card4-image"></div>
             <div class="project-card-content">
-              <div class="project-title">线束式铺设工艺创新</div>
-              <p class="project-desc">创新线束式铺设模式，将施工周期从6周缩短至4周，支撑公司年订单量增长15%。通过线束保护升级降低电气故障率，节约年度售后成本。</p>
+              <div class="project-title" data-zh="线束式铺设工艺创新" data-en="Harness Routing Process Innovation">线束式铺设工艺创新</div>
+              <p class="project-desc" data-zh="创新线束式铺设模式，将施工周期从6周缩短至4周，支撑公司年订单量增长15%。通过线束保护升级降低电气故障率，节约年度售后成本。" data-en="Pioneered a harness-based routing method, reducing construction time from 6 weeks to 4 weeks and supporting a 15% annual order growth. Upgraded harness protection to reduce electrical failure rates, saving annual after-sales costs.">创新线束式铺设模式，将施工周期从6周缩短至4周，支撑公司年订单量增长15%。通过线束保护升级降低电气故障率，节约年度售后成本。</p>
             </div>
           </div>
         </div>
@@ -1530,7 +1592,7 @@
     <section class="section" id="showcase">
       <div class="section-header">
         <div class="accent-bar"></div>
-        <h2 class="section-title">案例展示</h2>
+        <h2 class="section-title" data-zh="案例展示" data-en="Case Study">案例展示</h2>
         <div class="header-spacer"></div>
         <span class="section-label">CASE STUDY</span>
       </div>
@@ -1539,74 +1601,78 @@
       <div class="showcase-banner">
         <div class="showcase-tag">SOLAR ELECTRIC CATAMARAN</div>
         <div class="showcase-name">Oceanwalker S60e</div>
-        <div class="showcase-subtitle">太阳能电动双体游艇 — 专为静谧巡航和高效能源利用而设计</div>
+        <div class="showcase-subtitle" data-zh="太阳能电动双体游艇 — 专为静谧巡航和高效能源利用而设计" data-en="Solar-Electric Catamaran — Designed for silent cruising and efficient energy utilization">太阳能电动双体游艇 — 专为静谧巡航和高效能源利用而设计</div>
         <div class="showcase-partner">
-          <span class="showcase-partner-label">合作方：</span>
-          <span class="showcase-partner-name">Revolution Marine X 逸动科技</span>
+          <span class="showcase-partner-label" data-zh="合作方：" data-en="Partner: ">合作方：</span>
+          <span class="showcase-partner-name">Revolution Marine X ePropulsion</span>
         </div>
       </div>
 
       <!-- Overview -->
-      <p class="showcase-overview">Oceanwalker S60e 是一艘太阳能电动双体游艇，由逸动科技与 Revolution Marine Group 合作打造，旨在成为可持续游艇标杆。首艘 S60e 于 2026 年 4 月交付至 Club Ki'ama Bahamas（全球首个提供太阳能海滨住宅与碳中和游艇船队的私人岛屿俱乐部），目标用户为追求碳中和生活方式的高端船东。
+      <p class="showcase-overview" data-zh="Oceanwalker S60e 是一艘太阳能电动双体游艇，由逸动科技与 Revolution Marine Group 合作打造，旨在成为可持续游艇标杆。首艘 S60e 于 2026 年 4 月交付至 Club Ki'ama Bahamas（全球首个提供太阳能海滨住宅与碳中和游艇船队的私人岛屿俱乐部），目标用户为追求碳中和生活方式的高端船东。
+
+该游艇采用轻质复合材料制造，配备两台 150kW 推进电机，最高航速 12 节，经济航速 7-8 节；搭载逸动自研船用磷酸铁锂电池及智能电池管理系统（BMS），集成 10kW 太阳能阵列，可在锚泊时利用太阳能补充电力；配备两台 45kW 柴油发电机组作为增程器，巡航航程可达 800 海里。" data-en="The Oceanwalker S60e is a solar-electric catamaran built in collaboration between ePropulsion and Revolution Marine Group, designed to become a benchmark for sustainable yachting. The first S60e was delivered in April 2026 to Club Ki'ama Bahamas — the world's first private island club offering solar-powered waterfront residences and a carbon-neutral yacht fleet — targeting high-end boat owners pursuing a carbon-neutral lifestyle.
+
+The yacht is constructed with lightweight composite materials, equipped with two 150kW propulsion motors, a top speed of 12 knots, and an economical cruising speed of 7-8 knots. It features ePropulsion's self-developed marine LiFePO4 batteries with an intelligent Battery Management System (BMS), integrated 10kW solar array for supplemental solar charging while at anchor, and two 45kW diesel generators as range extenders, achieving a cruising range of 800 nautical miles.">Oceanwalker S60e 是一艘太阳能电动双体游艇，由逸动科技与 Revolution Marine Group 合作打造，旨在成为可持续游艇标杆。首艘 S60e 于 2026 年 4 月交付至 Club Ki'ama Bahamas（全球首个提供太阳能海滨住宅与碳中和游艇船队的私人岛屿俱乐部），目标用户为追求碳中和生活方式的高端船东。
 
 该游艇采用轻质复合材料制造，配备两台 150kW 推进电机，最高航速 12 节，经济航速 7-8 节；搭载逸动自研船用磷酸铁锂电池及智能电池管理系统（BMS），集成 10kW 太阳能阵列，可在锚泊时利用太阳能补充电力；配备两台 45kW 柴油发电机组作为增程器，巡航航程可达 800 海里。</p>
 
       <!-- Gallery -->
       <div class="showcase-gallery">
-        <div class="showcase-gallery-item showcase-gallery-1" title="S60e 甲板视角"></div>
-        <div class="showcase-gallery-item showcase-gallery-2" title="S60 环球航行"></div>
-        <div class="showcase-gallery-item showcase-gallery-3" title="S60e 海上航行"></div>
+        <div class="showcase-gallery-item showcase-gallery-1" data-zh-title="S60e 甲板视角" data-en-title="S60e Deck View" title="S60e 甲板视角"></div>
+        <div class="showcase-gallery-item showcase-gallery-2" data-zh-title="S60 环球航行" data-en-title="S60 Global Voyage" title="S60 环球航行"></div>
+        <div class="showcase-gallery-item showcase-gallery-3" data-zh-title="S60e 海上航行" data-en-title="S60e at Sea" title="S60e 海上航行"></div>
       </div>
 
       <!-- Specs Grid -->
       <div class="specs-grid">
         <div class="spec-item">
-          <div class="spec-label">船长</div>
-          <div class="spec-value">18.29 <span class="spec-unit">米</span></div>
+          <div class="spec-label" data-zh="船长" data-en="Length">船长</div>
+          <div class="spec-value">18.29 <span class="spec-unit" data-zh="米" data-en="m">米</span></div>
         </div>
         <div class="spec-item">
-          <div class="spec-label">型宽</div>
-          <div class="spec-value">8.38 <span class="spec-unit">米</span></div>
+          <div class="spec-label" data-zh="型宽" data-en="Beam">型宽</div>
+          <div class="spec-value">8.38 <span class="spec-unit" data-zh="米" data-en="m">米</span></div>
         </div>
         <div class="spec-item">
-          <div class="spec-label">吃水</div>
-          <div class="spec-value">8.84 <span class="spec-unit">米</span></div>
+          <div class="spec-label" data-zh="吃水" data-en="Draft">吃水</div>
+          <div class="spec-value">8.84 <span class="spec-unit" data-zh="米" data-en="m">米</span></div>
         </div>
         <div class="spec-item">
-          <div class="spec-label">排水量</div>
-          <div class="spec-value">42 <span class="spec-unit">吨</span></div>
+          <div class="spec-label" data-zh="排水量" data-en="Displacement">排水量</div>
+          <div class="spec-value">42 <span class="spec-unit" data-zh="吨" data-en="t">吨</span></div>
         </div>
         <div class="spec-item">
-          <div class="spec-label">巡航航速</div>
-          <div class="spec-value">8 <span class="spec-unit">节</span></div>
+          <div class="spec-label" data-zh="巡航航速" data-en="Cruise Speed">巡航航速</div>
+          <div class="spec-value">8 <span class="spec-unit" data-zh="节" data-en="kn">节</span></div>
         </div>
         <div class="spec-item">
-          <div class="spec-label">最大航速</div>
-          <div class="spec-value">12 <span class="spec-unit">节</span></div>
+          <div class="spec-label" data-zh="最大航速" data-en="Max Speed">最大航速</div>
+          <div class="spec-value">12 <span class="spec-unit" data-zh="节" data-en="kn">节</span></div>
         </div>
         <div class="spec-item">
-          <div class="spec-label">推进电机</div>
+          <div class="spec-label" data-zh="推进电机" data-en="Propulsion Motors">推进电机</div>
           <div class="spec-value">150 <span class="spec-unit">kW × 2</span></div>
         </div>
         <div class="spec-item">
-          <div class="spec-label">艏侧推器</div>
+          <div class="spec-label" data-zh="艏侧推器" data-en="Bow Thrusters">艏侧推器</div>
           <div class="spec-value">15 <span class="spec-unit">kW × 2</span></div>
         </div>
         <div class="spec-item">
-          <div class="spec-label">电池容量</div>
+          <div class="spec-label" data-zh="电池容量" data-en="Battery Capacity">电池容量</div>
           <div class="spec-value">141 <span class="spec-unit">kWh × 2</span></div>
         </div>
         <div class="spec-item">
-          <div class="spec-label">增程器功率</div>
+          <div class="spec-label" data-zh="增程器功率" data-en="Range Extender">增程器功率</div>
           <div class="spec-value">55 <span class="spec-unit">kW × 2</span></div>
         </div>
         <div class="spec-item">
-          <div class="spec-label">太阳能阵列</div>
+          <div class="spec-label" data-zh="太阳能阵列" data-en="Solar Array">太阳能阵列</div>
           <div class="spec-value">10 <span class="spec-unit">kW</span></div>
         </div>
         <div class="spec-item">
-          <div class="spec-label">CE 认证</div>
-          <div class="spec-value">B <span class="spec-unit">级</span></div>
+          <div class="spec-label" data-zh="CE 认证" data-en="CE Certification">CE 认证</div>
+          <div class="spec-value">B <span class="spec-unit" data-zh="级" data-en="Class">级</span></div>
         </div>
       </div>
 
@@ -1614,34 +1680,34 @@
       <div class="highlights-grid">
         <div class="highlight-card">
           <div class="highlight-number">01</div>
-          <div class="highlight-title">环保性能</div>
-          <div class="highlight-desc">全电力推进消除常规化石燃料消耗，太阳能阵列延长无排放运行时间，完美契合碳中和生活方式。</div>
+          <div class="highlight-title" data-zh="环保性能" data-en="Eco Performance">环保性能</div>
+          <div class="highlight-desc" data-zh="全电力推进消除常规化石燃料消耗，太阳能阵列延长无排放运行时间，完美契合碳中和生活方式。" data-en="All-electric propulsion eliminates conventional fossil fuel consumption, while the solar array extends zero-emission operating time, perfectly aligned with a carbon-neutral lifestyle.">全电力推进消除常规化石燃料消耗，太阳能阵列延长无排放运行时间，完美契合碳中和生活方式。</div>
         </div>
         <div class="highlight-card">
           <div class="highlight-number">02</div>
-          <div class="highlight-title">智能能源管理</div>
-          <div class="highlight-desc">自研 BMS 实时监测电池状态优化充放电，EMS 精密能量管理系统实现电力精准分配与全船电气监控。</div>
+          <div class="highlight-title" data-zh="智能能源管理" data-en="Smart Energy Management">智能能源管理</div>
+          <div class="highlight-desc" data-zh="自研 BMS 实时监测电池状态优化充放电，EMS 精密能量管理系统实现电力精准分配与全船电气监控。" data-en="Self-developed BMS monitors battery status in real time to optimize charge/discharge cycles, while the EMS precision energy management system achieves precise power distribution and full-vessel electrical monitoring.">自研 BMS 实时监测电池状态优化充放电，EMS 精密能量管理系统实现电力精准分配与全船电气监控。</div>
         </div>
         <div class="highlight-card">
           <div class="highlight-number">03</div>
-          <div class="highlight-title">长航程保障</div>
-          <div class="highlight-desc">柴油增程器结合智能能源管理，突破纯电续航限制，巡航航程可达 800 海里，支持偏远目的地探索。</div>
+          <div class="highlight-title" data-zh="长航程保障" data-en="Extended Range">长航程保障</div>
+          <div class="highlight-desc" data-zh="柴油增程器结合智能能源管理，突破纯电续航限制，巡航航程可达 800 海里，支持偏远目的地探索。" data-en="Diesel range extenders combined with smart energy management break through pure-electric range limitations, achieving a cruising range of 800 nautical miles and supporting exploration of remote destinations.">柴油增程器结合智能能源管理，突破纯电续航限制，巡航航程可达 800 海里，支持偏远目的地探索。</div>
         </div>
         <div class="highlight-card">
           <div class="highlight-number">04</div>
-          <div class="highlight-title">静音航行体验</div>
-          <div class="highlight-desc">电机驱动近乎静音，大幅提升巡航舒适性；轻质材料与高效动力设计平衡性能与能耗。</div>
+          <div class="highlight-title" data-zh="静音航行体验" data-en="Silent Cruising">静音航行体验</div>
+          <div class="highlight-desc" data-zh="电机驱动近乎静音，大幅提升巡航舒适性；轻质材料与高效动力设计平衡性能与能耗。" data-en="Electric motor drive is near-silent, significantly enhancing cruising comfort; lightweight materials and efficient powertrain design balance performance and energy consumption.">电机驱动近乎静音，大幅提升巡航舒适性；轻质材料与高效动力设计平衡性能与能耗。</div>
         </div>
         <div class="highlight-card">
           <div class="highlight-number">05</div>
-          <div class="highlight-title">可靠易维护</div>
-          <div class="highlight-desc">电力系统减少机械损耗，降低维护需求，提升船艇整体可靠性与运营效率。</div>
+          <div class="highlight-title" data-zh="可靠易维护" data-en="Reliable & Low Maintenance">可靠易维护</div>
+          <div class="highlight-desc" data-zh="电力系统减少机械损耗，降低维护需求，提升船艇整体可靠性与运营效率。" data-en="The electric powertrain reduces mechanical wear, lowers maintenance requirements, and enhances the overall reliability and operational efficiency of the vessel.">电力系统减少机械损耗，降低维护需求，提升船艇整体可靠性与运营效率。</div>
         </div>
       </div>
 
       <!-- Source Link -->
       <a class="showcase-link" href="https://www.epropulsion.cn/solution/plan_110" target="_blank" rel="noopener">
-        查看原方案详情 →
+        <span data-zh="查看原方案详情" data-en="View Original Solution">查看原方案详情</span> →
       </a>
     </section>
 
@@ -1649,15 +1715,15 @@
     <section class="section" id="contact">
       <div class="section-header">
         <div class="accent-bar"></div>
-        <h2 class="section-title">联系方式</h2>
+        <h2 class="section-title" data-zh="联系方式" data-en="Contact">联系方式</h2>
         <div class="header-spacer"></div>
         <span class="section-label">CONTACT</span>
       </div>
       <div class="contact-content">
-        <div class="contact-heading">有项目想聊聊？</div>
-        <div class="contact-info">邮箱  15806980967@189.cn    ·    电话  158-0698-0967    ·    地址  华东区域</div>
+        <div class="contact-heading" data-zh="有项目想聊聊？" data-en="Let's Talk About Your Project">有项目想聊聊？</div>
+        <div class="contact-info"><span data-zh="邮箱" data-en="Email">邮箱</span>  15806980967@189.cn    ·    <span data-zh="电话" data-en="Phone">电话</span>  158-0698-0967    ·    <span data-zh="地址" data-en="Location">地址</span>  <span data-zh="华东区域" data-en="East China">华东区域</span></div>
         <a class="contact-button" href="mailto:15806980967@189.cn">
-          <span>发送邮件</span>
+          <span data-zh="发送邮件" data-en="Send Email">发送邮件</span>
         </a>
       </div>
     </section>
@@ -1665,14 +1731,52 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-border"></div>
-      <div class="footer-text">Copyright 2026 赵洪凯 · 电气工程师 · All Rights Reserved</div>
+      <div class="footer-text" data-zh="Copyright 2026 赵洪凯 · 电气工程师 · All Rights Reserved" data-en="Copyright 2026 Zhao Hongkai · Electrical Engineer · All Rights Reserved">Copyright 2026 赵洪凯 · 电气工程师 · All Rights Reserved</div>
     </footer>
   </div>
 
   <script>
+    // === Bilingual Language Switching ===
+    function switchLang(lang) {
+      // Update all elements with data-zh/data-en
+      document.querySelectorAll('[data-zh]').forEach(function(el) {
+        var text = lang === 'zh' ? el.getAttribute('data-zh') : el.getAttribute('data-en');
+        if (text !== null) {
+          el.textContent = text;
+        }
+      });
+
+      // Update gallery titles
+      document.querySelectorAll('[data-zh-title]').forEach(function(el) {
+        var title = lang === 'zh' ? el.getAttribute('data-zh-title') : el.getAttribute('data-en-title');
+        if (title !== null) {
+          el.setAttribute('title', title);
+        }
+      });
+
+      // Update html lang attribute
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+
+      // Update toggle button states
+      document.getElementById('lang-zh').classList.toggle('active', lang === 'zh');
+      document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+
+      // Save preference
+      try {
+        localStorage.setItem('site-lang', lang);
+      } catch(e) {}
+    }
+
+    // Restore saved language preference on load
+    (function() {
+      var savedLang = 'zh';
+      try {
+        savedLang = localStorage.getItem('site-lang') || 'zh';
+      } catch(e) {}
+      switchLang(savedLang);
+    })();
+
     // === Proportional Scaling ===
-    // Preserves the original 1440px design canvas and scales proportionally
-    // to fit the viewport width, with normal vertical scrolling.
     (function () {
       var DESIGN_WIDTH = 1440;
       var wrapper = document.querySelector('.page-wrapper');
@@ -1681,25 +1785,20 @@
         var scale = window.innerWidth / DESIGN_WIDTH;
         wrapper.style.transform = 'scale(' + scale + ')';
 
-        // Adjust body height to enable proper scrolling after scaling
-        // Use requestAnimationFrame to ensure the wrapper has rendered
         requestAnimationFrame(function () {
           var wrapperHeight = wrapper.offsetHeight;
           document.body.style.height = (wrapperHeight * scale) + 'px';
         });
       }
 
-      // Initial scale
       scalePage();
 
-      // Re-scale on resize (debounced)
       var resizeTimer;
       window.addEventListener('resize', function () {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(scalePage, 100);
       });
 
-      // Re-scale after fonts load (heights may change)
       if (document.fonts && document.fonts.ready) {
         document.fonts.ready.then(scalePage);
       }
