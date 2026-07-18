@@ -498,6 +498,66 @@
       background: linear-gradient(to bottom, rgba(13, 46, 56, 0.2), rgba(10, 15, 26, 0.85)), url('images/project4.jpg') center/cover no-repeat;
     }
 
+    .card5-image {
+      background: linear-gradient(to bottom, rgba(13, 43, 78, 0.2), rgba(10, 26, 46, 0.85)), url('images/fleet1.jpg') center/cover no-repeat;
+    }
+
+    .card6-image {
+      background: linear-gradient(to bottom, rgba(16, 37, 64, 0.2), rgba(10, 21, 37, 0.85)), url('images/fleet2.jpg') center/cover no-repeat;
+    }
+
+    .card7-image {
+      background: linear-gradient(to bottom, rgba(13, 56, 64, 0.2), rgba(10, 26, 30, 0.85)), url('images/fleet3.jpg') center/cover no-repeat;
+    }
+
+    .card8-image {
+      background: linear-gradient(to bottom, rgba(13, 43, 78, 0.2), rgba(10, 26, 46, 0.85)), url('images/s60e_banner.jpg') center/cover no-repeat;
+    }
+
+    .project-subgroup {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 24px;
+    }
+
+    .project-subgroup-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .subgroup-bar {
+      width: 3px;
+      height: 20px;
+      border-radius: 2px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .subgroup-text {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      letter-spacing: 1px;
+    }
+
+    .project-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent-light);
+      text-decoration: none;
+      transition: gap 0.2s ease;
+      margin-top: 4px;
+    }
+
+    .project-card-link:hover {
+      gap: 10px;
+    }
+
     .project-card-content {
       display: flex;
       flex-direction: column;
@@ -1270,7 +1330,7 @@ I previously served as Lead Electrical Engineer at Liaocheng Best Yacht Co., Ltd
               <div class="stat-label" data-zh="年行业经验" data-en="Years Experience">年行业经验</div>
             </div>
             <div class="stat-card">
-              <div class="stat-number">3+</div>
+              <div class="stat-number">8+</div>
               <div class="stat-label" data-zh="游艇电气项目" data-en="Yacht Projects">游艇电气项目</div>
             </div>
             <div class="stat-card">
@@ -1553,38 +1613,91 @@ In just three years since its founding, Oceanwalker started from scratch and, wi
         <span class="section-label">PROJECTS</span>
       </div>
       <div class="projects-grid">
-        <div class="projects-row">
-          <div class="project-card">
-            <div class="project-card-image card1-image"></div>
-            <div class="project-card-content">
-              <div class="project-title" data-zh="50 尺豪华游艇电气系统" data-en="50ft Luxury Yacht Electrical System">50 尺豪华游艇电气系统</div>
-              <p class="project-desc" data-zh="独立完成50尺豪华游艇全套电气系统设计与现场施工，包括配电、照明、监控及导航系统集成，并完成后续调试试航工作。" data-en="Independently completed the full electrical system design and on-site construction for a 50ft luxury yacht, including power distribution, lighting, monitoring, and navigation system integration, followed by commissioning and sea trials.">独立完成50尺豪华游艇全套电气系统设计与现场施工，包括配电、照明、监控及导航系统集成，并完成后续调试试航工作。</p>
+
+        <!-- Sub-group 1: Best Yacht Projects -->
+        <div class="project-subgroup">
+          <div class="project-subgroup-label">
+            <div class="subgroup-bar"></div>
+            <span class="subgroup-text" data-zh="百思特游艇 · 电气工程项目" data-en="Best Yacht · Electrical Engineering Projects">百思特游艇 · 电气工程项目</span>
+          </div>
+          <div class="projects-row">
+            <div class="project-card">
+              <div class="project-card-image card1-image"></div>
+              <div class="project-card-content">
+                <div class="project-title" data-zh="50 尺豪华游艇电气系统" data-en="50ft Luxury Yacht Electrical System">50 尺豪华游艇电气系统</div>
+                <p class="project-desc" data-zh="独立完成50尺豪华游艇全套电气系统设计与现场施工，包括配电、照明、监控及导航系统集成，并完成后续调试试航工作。" data-en="Independently completed the full electrical system design and on-site construction for a 50ft luxury yacht, including power distribution, lighting, monitoring, and navigation system integration, followed by commissioning and sea trials.">独立完成50尺豪华游艇全套电气系统设计与现场施工，包括配电、照明、监控及导航系统集成，并完成后续调试试航工作。</p>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-image card2-image"></div>
+              <div class="project-card-content">
+                <div class="project-title" data-zh="65 尺游艇电气设计与安装" data-en="65ft Yacht Electrical Design & Installation">65 尺游艇电气设计与安装</div>
+                <p class="project-desc" data-zh="完成65尺游艇电气系统设计，负责现场实际操作安装及后续调试试航工作，确保各系统可靠运行。" data-en="Completed the electrical system design for a 65ft yacht, responsible for on-site installation and subsequent commissioning and sea trials, ensuring reliable operation of all systems.">完成65尺游艇电气系统设计，负责现场实际操作安装及后续调试试航工作，确保各系统可靠运行。</p>
+              </div>
             </div>
           </div>
-          <div class="project-card">
-            <div class="project-card-image card2-image"></div>
-            <div class="project-card-content">
-              <div class="project-title" data-zh="65 尺游艇电气设计与安装" data-en="65ft Yacht Electrical Design & Installation">65 尺游艇电气设计与安装</div>
-              <p class="project-desc" data-zh="完成65尺游艇电气系统设计，负责现场实际操作安装及后续调试试航工作，确保各系统可靠运行。" data-en="Completed the electrical system design for a 65ft yacht, responsible for on-site installation and subsequent commissioning and sea trials, ensuring reliable operation of all systems.">完成65尺游艇电气系统设计，负责现场实际操作安装及后续调试试航工作，确保各系统可靠运行。</p>
+          <div class="projects-row">
+            <div class="project-card">
+              <div class="project-card-image card3-image"></div>
+              <div class="project-card-content">
+                <div class="project-title" data-zh="360 游艇电气系统设计" data-en="360 Yacht Electrical System Design">360 游艇电气系统设计</div>
+                <p class="project-desc" data-zh="完成360游艇电气系统全套设计，涵盖电力分配、自动化控制及设备选型，满足游艇各项功能需求。" data-en="Completed the full electrical system design for the 360 yacht, covering power distribution, automation control, and equipment selection, meeting all functional requirements of the yacht.">完成360游艇电气系统全套设计，涵盖电力分配、自动化控制及设备选型，满足游艇各项功能需求。</p>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-image card4-image"></div>
+              <div class="project-card-content">
+                <div class="project-title" data-zh="线束式铺设工艺创新" data-en="Harness Routing Process Innovation">线束式铺设工艺创新</div>
+                <p class="project-desc" data-zh="创新线束式铺设模式，将施工周期从6周缩短至4周，支撑公司年订单量增长15%。通过线束保护升级降低电气故障率，节约年度售后成本。" data-en="Pioneered a harness-based routing method, reducing construction time from 6 weeks to 4 weeks and supporting a 15% annual order growth. Upgraded harness protection to reduce electrical failure rates, saving annual after-sales costs.">创新线束式铺设模式，将施工周期从6周缩短至4周，支撑公司年订单量增长15%。通过线束保护升级降低电气故障率，节约年度售后成本。</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="projects-row">
-          <div class="project-card">
-            <div class="project-card-image card3-image"></div>
-            <div class="project-card-content">
-              <div class="project-title" data-zh="360 游艇电气系统设计" data-en="360 Yacht Electrical System Design">360 游艇电气系统设计</div>
-              <p class="project-desc" data-zh="完成360游艇电气系统全套设计，涵盖电力分配、自动化控制及设备选型，满足游艇各项功能需求。" data-en="Completed the full electrical system design for the 360 yacht, covering power distribution, automation control, and equipment selection, meeting all functional requirements of the yacht.">完成360游艇电气系统全套设计，涵盖电力分配、自动化控制及设备选型，满足游艇各项功能需求。</p>
+
+        <!-- Sub-group 2: Oceanwalker Yacht Projects -->
+        <div class="project-subgroup">
+          <div class="project-subgroup-label">
+            <div class="subgroup-bar"></div>
+            <span class="subgroup-text" data-zh="Oceanwalker Yachts · 游艇型号项目" data-en="Oceanwalker Yachts · Yacht Model Projects">Oceanwalker Yachts · 游艇型号项目</span>
+          </div>
+          <div class="projects-row">
+            <div class="project-card">
+              <div class="project-card-image card5-image"></div>
+              <div class="project-card-content">
+                <div class="project-title">Oceanwalker S60</div>
+                <p class="project-desc" data-zh="品牌旗舰豪华双体游艇，船长18.87m，型宽8.38m，最大航速18节。配备3/4舱室布局，搭载 Volvo Penta D6-440 双发动机，兼顾豪华舒适与卓越航行性能。" data-en="Brand flagship luxury catamaran, 18.87m LOA, 8.38m beam, 18-knot top speed. Features 3/4 cabin layouts and twin Volvo Penta D6-440 engines, balancing luxury comfort with outstanding sailing performance.">品牌旗舰豪华双体游艇，船长18.87m，型宽8.38m，最大航速18节。配备3/4舱室布局，搭载 Volvo Penta D6-440 双发动机，兼顾豪华舒适与卓越航行性能。</p>
+                <a class="project-card-link" href="#oceanwalker" data-zh="查看船队详情 →" data-en="View Fleet Details →">查看船队详情 →</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-image card6-image"></div>
+              <div class="project-card-content">
+                <div class="project-title">Oceanwalker X62</div>
+                <p class="project-desc" data-zh="X 系列扩展型豪华双体游艇，提供更大空间与续航能力，适用于远洋巡航。支持个性化定制配置，满足高端船东对空间与航程的极致追求。" data-en="X Series extended luxury catamaran, offering greater space and range for ocean cruising. Supports personalized configurations, meeting high-end owners' ultimate demands for space and range.">X 系列扩展型豪华双体游艇，提供更大空间与续航能力，适用于远洋巡航。支持个性化定制配置，满足高端船东对空间与航程的极致追求。</p>
+                <a class="project-card-link" href="#oceanwalker" data-zh="查看船队详情 →" data-en="View Fleet Details →">查看船队详情 →</a>
+              </div>
             </div>
           </div>
-          <div class="project-card">
-            <div class="project-card-image card4-image"></div>
-            <div class="project-card-content">
-              <div class="project-title" data-zh="线束式铺设工艺创新" data-en="Harness Routing Process Innovation">线束式铺设工艺创新</div>
-              <p class="project-desc" data-zh="创新线束式铺设模式，将施工周期从6周缩短至4周，支撑公司年订单量增长15%。通过线束保护升级降低电气故障率，节约年度售后成本。" data-en="Pioneered a harness-based routing method, reducing construction time from 6 weeks to 4 weeks and supporting a 15% annual order growth. Upgraded harness protection to reduce electrical failure rates, saving annual after-sales costs.">创新线束式铺设模式，将施工周期从6周缩短至4周，支撑公司年订单量增长15%。通过线束保护升级降低电气故障率，节约年度售后成本。</p>
+          <div class="projects-row">
+            <div class="project-card">
+              <div class="project-card-image card7-image"></div>
+              <div class="project-card-content">
+                <div class="project-title">Oceanwalker 53</div>
+                <p class="project-desc" data-zh="经典系列中型豪华游艇，以灵活操控和易停泊著称。适合近海与沿岸巡航，为船主提供便捷而精致的航海体验。" data-en="Classic series mid-size luxury yacht, renowned for agile handling and easy berthing. Ideal for coastal and near-shore cruising, offering owners a convenient yet refined sailing experience.">经典系列中型豪华游艇，以灵活操控和易停泊著称。适合近海与沿岸巡航，为船主提供便捷而精致的航海体验。</p>
+                <a class="project-card-link" href="#oceanwalker" data-zh="查看船队详情 →" data-en="View Fleet Details →">查看船队详情 →</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-image card8-image"></div>
+              <div class="project-card-content">
+                <div class="project-title">Oceanwalker S60e</div>
+                <p class="project-desc" data-zh="太阳能电动双体游艇，配备双 150kW 推进电机，最高航速12节，巡航航程达 800 海里。集成 10kW 太阳能阵列与智能 BMS 电池管理系统，交付全球首个碳中和游艇社区。" data-en="Solar-electric catamaran equipped with dual 150kW propulsion motors, 12-knot top speed, and 800-nautical-mile cruising range. Integrates a 10kW solar array with intelligent BMS battery management, delivered to the world's first carbon-neutral yacht community.">太阳能电动双体游艇，配备双 150kW 推进电机，最高航速12节，巡航航程达 800 海里。集成 10kW 太阳能阵列与智能 BMS 电池管理系统，交付全球首个碳中和游艇社区。</p>
+                <a class="project-card-link" href="#showcase" data-zh="查看案例详情 →" data-en="View Case Study →">查看案例详情 →</a>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
