@@ -803,6 +803,255 @@
       color: var(--text-secondary);
     }
 
+    /* === Oceanwalker Section === */
+    .ow-banner {
+      width: 100%;
+      height: 320px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #0A1E3E 0%, #0A1528 40%, #0A0B0F 100%);
+      border: 1px solid var(--stroke);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 56px;
+      gap: 14px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .ow-banner::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -8%;
+      width: 460px;
+      height: 460px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(96,165,250,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .ow-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -40%;
+      left: 10%;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .ow-tag {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent-light);
+      letter-spacing: 3px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ow-name {
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ow-name-en {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ow-slogan {
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 700px;
+      position: relative;
+      z-index: 1;
+      font-style: italic;
+    }
+
+    .ow-overview {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.9;
+      white-space: pre-line;
+    }
+
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
+    }
+
+    .fleet-card {
+      display: flex;
+      flex-direction: column;
+      border-radius: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--stroke);
+      overflow: hidden;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .fleet-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .fleet-image {
+      width: 100%;
+      height: 140px;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+    }
+
+    .fleet-image-1 { background: linear-gradient(135deg, #0D2B4E, #0A1A2E); }
+    .fleet-image-2 { background: linear-gradient(135deg, #102540, #0A1525); }
+    .fleet-image-3 { background: linear-gradient(135deg, #0D3840, #0A1A1E); }
+
+    .fleet-image-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent-light);
+      letter-spacing: 2px;
+    }
+
+    .fleet-content {
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      gap: 14px;
+    }
+
+    .fleet-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .fleet-desc {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-tertiary);
+    }
+
+    .fleet-specs {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border-line);
+    }
+
+    .fleet-spec-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .fleet-spec-label {
+      color: var(--text-tertiary);
+    }
+
+    .fleet-spec-value {
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .presence-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      width: 100%;
+    }
+
+    .presence-card {
+      display: flex;
+      flex-direction: column;
+      padding: 24px 16px;
+      gap: 8px;
+      border-radius: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-line);
+      align-items: center;
+      text-align: center;
+      transition: border-color 0.2s ease;
+    }
+
+    .presence-card:hover {
+      border-color: var(--accent);
+    }
+
+    .presence-region {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .presence-label {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-tertiary);
+    }
+
+    .achievement-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .achievement-item {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      padding: 24px 28px;
+      border-radius: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-line);
+      transition: border-color 0.2s ease;
+    }
+
+    .achievement-item:hover {
+      border-color: var(--stroke);
+    }
+
+    .achievement-date {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent-light);
+      white-space: nowrap;
+      flex-shrink: 0;
+      width: 120px;
+    }
+
+    .achievement-text {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .achievement-text strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
     /* === Contact Section === */
     .contact-content {
       display: flex;
@@ -887,7 +1136,8 @@
       <div class="nav-links">
         <a href="#about">关于我</a>
         <a href="#experience">履历</a>
-        <a href="#company">公司</a>
+        <a href="#company">前公司</a>
+        <a href="#oceanwalker">现就职</a>
         <a href="#projects">项目</a>
         <a href="#showcase">案例</a>
         <a href="#contact">联系</a>
@@ -924,7 +1174,7 @@
           <div class="portrait-placeholder"></div>
           <p class="bio-text">我是赵洪凯，一名拥有5年游艇电气领域经验的电气工程师。毕业于青岛黄海学院机械制造与自动化专业，具备机械与电气跨学科理论基础。持有助理工程师职称。
 
-现任聊城百思特游艇有限公司电气工程师主管，主导游艇电气系统全流程设计，涵盖电气架构规划、设备选型、标准化安装规范制定及团队管理。曾独立完成50尺、65尺豪华游艇及360游艇的电气设计与现场施工，创新线束式铺设模式将施工周期从6周缩短至4周，支撑公司年订单量增长15%。</p>
+曾任职于聊城百思特游艇有限公司担任电气工程师主管，主导游艇电气系统全流程设计，独立完成50尺、65尺豪华游艇及360游艇的电气设计与现场施工，创新线束式铺设模式将施工周期从6周缩短至4周。现就职于福建天行者游艇有限公司（Oceanwalker Yachts），参与豪华游艇及新能源电动双体游艇的电气系统设计与集成工作。</p>
         </div>
         <div class="about-right">
           <div class="stats-grid">
@@ -972,7 +1222,16 @@
       </div>
       <div class="timeline">
         <div class="timeline-item first">
-          <div class="timeline-year">2020.10 — 至今</div>
+          <div class="timeline-year">2025 — 至今</div>
+          <div class="timeline-content">
+            <div class="timeline-title">电气工程师</div>
+            <div class="timeline-company">福建天行者游艇有限公司 (Oceanwalker Yachts)</div>
+            <p class="timeline-desc">就职于 Oceanwalker Yachts，参与豪华游艇及新能源电动双体游艇的电气系统设计与集成工作。Oceanwalker 是一家以"突破边界"为核心理念的新锐豪华游艇品牌，产品出口至新加坡、迪拜、巴哈马等国际市场。</p>
+          </div>
+        </div>
+        <div class="timeline-separator"></div>
+        <div class="timeline-item middle">
+          <div class="timeline-year">2020.10 — 2025</div>
           <div class="timeline-content">
             <div class="timeline-title">电气工程师主管</div>
             <div class="timeline-company">聊城百思特游艇有限公司</div>
@@ -995,9 +1254,9 @@
     <section class="section" id="company">
       <div class="section-header">
         <div class="accent-bar"></div>
-        <h2 class="section-title">所在公司</h2>
+        <h2 class="section-title">前公司</h2>
         <div class="header-spacer"></div>
-        <span class="section-label">COMPANY</span>
+        <span class="section-label">PREVIOUS</span>
       </div>
 
       <!-- Company Banner -->
@@ -1059,6 +1318,134 @@
       <!-- Company Link -->
       <a class="showcase-link" href="https://www.best-yt.com/" target="_blank" rel="noopener">
         访问公司官网 →
+      </a>
+    </section>
+
+    <!-- Current Company: Oceanwalker Yachts -->
+    <section class="section" id="oceanwalker">
+      <div class="section-header">
+        <div class="accent-bar"></div>
+        <h2 class="section-title">现就职公司</h2>
+        <div class="header-spacer"></div>
+        <span class="section-label">CURRENT</span>
+      </div>
+
+      <!-- Banner -->
+      <div class="ow-banner">
+        <div class="ow-tag">OCEANWALKER YACHTS</div>
+        <div class="ow-name">福建天行者游艇有限公司</div>
+        <div class="ow-name-en">FUJIAN SKY WALKER YACHT CO., LTD</div>
+        <div class="ow-slogan">"Born of Passion, Forged by Breaking Boundaries"</div>
+      </div>
+
+      <!-- Overview -->
+      <p class="ow-overview">Oceanwalker Yachts 是一家专注于豪华游艇研发与制造的新锐品牌，秉持"重新定义海洋体验"的信念。品牌认为真正的豪华不在于浮华展示，而在于卓越的航行性能、直觉化的智能交互、对环境和谐的承诺，以及触动灵魂的独特设计。
+
+创立三年间，Oceanwalker 从零起步，以"突破边界"的勇气打破传统制造思维，消解豪华与可持续之间的虚假对立，挑战用户对游艇的既有认知，迅速在专业领域获得广泛认可。产品已出口至新加坡、迪拜、巴哈马等国际市场，并建立覆盖五大区域的全球经销商网络。</p>
+
+      <!-- Yacht Fleet -->
+      <div class="fleet-grid">
+        <div class="fleet-card">
+          <div class="fleet-image fleet-image-1">
+            <div class="fleet-image-label">FLAGSHIP</div>
+          </div>
+          <div class="fleet-content">
+            <div class="fleet-name">Oceanwalker S60</div>
+            <div class="fleet-desc">Luxury And Stylish — 品牌旗舰豪华双体游艇</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec-row"><span class="fleet-spec-label">船长</span><span class="fleet-spec-value">18.87 m</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label">型宽</span><span class="fleet-spec-value">8.38 m</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label">舱室</span><span class="fleet-spec-value">3 / 4 间</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label">最大航速</span><span class="fleet-spec-value">18 节</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label">发动机</span><span class="fleet-spec-value">Volvo Penta D6-440 ×2</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card">
+          <div class="fleet-image fleet-image-2">
+            <div class="fleet-image-label">SERIES X</div>
+          </div>
+          <div class="fleet-content">
+            <div class="fleet-name">Oceanwalker X62</div>
+            <div class="fleet-desc">Extended Luxury — 扩展型豪华游艇系列</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec-row"><span class="fleet-spec-label">定位</span><span class="fleet-spec-value">大型豪华双体</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label">系列</span><span class="fleet-spec-value">X 系列</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label">特点</span><span class="fleet-spec-value">更大空间与续航</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label">适用</span><span class="fleet-spec-value">远洋巡航</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label">定制</span><span class="fleet-spec-value">支持个性化配置</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="fleet-card">
+          <div class="fleet-image fleet-image-3">
+            <div class="fleet-image-label">COMPACT</div>
+          </div>
+          <div class="fleet-content">
+            <div class="fleet-name">Oceanwalker 53</div>
+            <div class="fleet-desc">Versatile Cruiser — 灵动型巡航游艇</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec-row"><span class="fleet-spec-label">定位</span><span class="fleet-spec-value">中型豪华游艇</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label">系列</span><span class="fleet-spec-value">经典系列</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label">特点</span><span class="fleet-spec-value">灵活操控易停泊</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label">适用</span><span class="fleet-spec-value">近海与沿岸</span></div>
+              <div class="fleet-spec-row"><span class="fleet-spec-label">定制</span><span class="fleet-spec-value">支持个性化配置</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Global Presence -->
+      <div class="company-stats">
+        <div class="presence-card">
+          <div class="presence-region">美国</div>
+          <div class="presence-label">U.S.</div>
+        </div>
+        <div class="presence-card">
+          <div class="presence-region">欧洲</div>
+          <div class="presence-label">EUROPE</div>
+        </div>
+        <div class="presence-card">
+          <div class="presence-region">阿联酋</div>
+          <div class="presence-label">UAE</div>
+        </div>
+        <div class="presence-card">
+          <div class="presence-region">新加坡</div>
+          <div class="presence-label">SINGAPORE</div>
+        </div>
+        <div class="presence-card">
+          <div class="presence-region">印度尼西亚</div>
+          <div class="presence-label">INDONESIA</div>
+        </div>
+      </div>
+
+      <!-- Key Achievements -->
+      <div class="achievement-list">
+        <div class="achievement-item">
+          <div class="achievement-date">2026.01</div>
+          <div class="achievement-text"><strong>S60 新能源双体游艇开启环球航行</strong> — Oceanwalker S60 搭载太阳能与锂电池系统，从漳州招银港启航，正式开启为期三年的环球航行。采用"自驾出境"模式，较传统货船运输节省近 10 万美元物流成本，全面验证游艇续航力与系统稳定性。</div>
+        </div>
+        <div class="achievement-item">
+          <div class="achievement-date">2026.04</div>
+          <div class="achievement-text"><strong>S60e 交付全球首个碳中和游艇社区</strong> — Oceanwalker S60e 太阳能电动双体游艇交付至巴哈马 Club Ki'ama，加入全球首个提供碳中和游艇船队的私人岛屿俱乐部，彰显品牌在可持续海事生活方式领域的持续承诺。</div>
+        </div>
+        <div class="achievement-item">
+          <div class="achievement-date">2025.12</div>
+          <div class="achievement-text"><strong>参展香港国际游艇展</strong> — 在香港清水湾游艇会举办的第 26 届香港国际游艇展上展出，吸引来自中国、韩国、东南亚、欧洲及俄罗斯的访客，展示品牌国际化布局。</div>
+        </div>
+        <div class="achievement-item">
+          <div class="achievement-date">2025.10</div>
+          <div class="achievement-text"><strong>S60 Revolution Edition 全球首发</strong> — 在劳德代尔堡国际游艇展 (FLIBS) 上全球首发 S60 Revolution Edition，搭载 9kW 太阳能板与 32kW 发电机，融合可持续理念与精炼的船上生活体验。</div>
+        </div>
+        <div class="achievement-item">
+          <div class="achievement-date">2025.04</div>
+          <div class="achievement-text"><strong>参展新加坡游艇节</strong> — 在 ONE°15 Marina Sentosa Cove 举办的新加坡游艇节上亮相，吸引超过 12,000 名访客，巩固品牌作为亚洲领先游艇品牌的地位。</div>
+        </div>
+      </div>
+
+      <!-- Company Link -->
+      <a class="showcase-link" href="https://www.oceanwalkeryacht.com/" target="_blank" rel="noopener">
+        访问 Oceanwalker 官网 →
       </a>
     </section>
 
